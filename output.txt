@@ -1,0 +1,160 @@
+AST generated successfully:
+Node type: <class 'javalang.tree.CompilationUnit'>
+    package: None
+    imports: [Import(path=java.util.Scanner, static=False, wildcard=False)]
+    types: [ClassDeclaration(annotations=[], body=[MethodDeclaration(annotations=[], body=[LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=ClassCreator(arguments=[MemberReference(member=in, postfix_operators=[], prefix_operators=[], qualifier=System, selectors=[])], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=Scanner, sub_type=None)), name=scanner)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Scanner, sub_type=None)), StatementExpression(expression=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Enter your name: ")], member=print, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None), label=None), LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[], member=nextLine, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), name=name)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=String, sub_type=None)), StatementExpression(expression=MethodInvocation(arguments=[BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, "), operandr=MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="!"), operator=+)], member=println, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None), label=None), StatementExpression(expression=MethodInvocation(arguments=[], member=close, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), label=None)], documentation=None, modifiers={'static', 'public'}, name=main, parameters=[FormalParameter(annotations=[], modifiers=set(), name=args, type=ReferenceType(arguments=None, dimensions=[None], name=String, sub_type=None), varargs=False)], return_type=None, throws=None, type_parameters=None)], documentation=None, extends=None, implements=None, modifiers={'public'}, name=InputOutputExample, type_parameters=None)]
+Node type: <class 'javalang.tree.Import'>
+    path: java.util.Scanner
+    static: False
+    wildcard: False
+Node type: <class 'javalang.tree.ClassDeclaration'>
+    modifiers: {'public'}
+    annotations: []
+    documentation: None
+    name: InputOutputExample
+    body: [MethodDeclaration(annotations=[], body=[LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=ClassCreator(arguments=[MemberReference(member=in, postfix_operators=[], prefix_operators=[], qualifier=System, selectors=[])], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=Scanner, sub_type=None)), name=scanner)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Scanner, sub_type=None)), StatementExpression(expression=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Enter your name: ")], member=print, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None), label=None), LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[], member=nextLine, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), name=name)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=String, sub_type=None)), StatementExpression(expression=MethodInvocation(arguments=[BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, "), operandr=MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="!"), operator=+)], member=println, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None), label=None), StatementExpression(expression=MethodInvocation(arguments=[], member=close, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), label=None)], documentation=None, modifiers={'static', 'public'}, name=main, parameters=[FormalParameter(annotations=[], modifiers=set(), name=args, type=ReferenceType(arguments=None, dimensions=[None], name=String, sub_type=None), varargs=False)], return_type=None, throws=None, type_parameters=None)]
+    type_parameters: None
+    extends: None
+    implements: None
+Node type: <class 'javalang.tree.MethodDeclaration'>
+    documentation: None
+    modifiers: {'static', 'public'}
+    annotations: []
+    type_parameters: None
+    return_type: None
+    name: main
+    parameters: [FormalParameter(annotations=[], modifiers=set(), name=args, type=ReferenceType(arguments=None, dimensions=[None], name=String, sub_type=None), varargs=False)]
+    throws: None
+    body: [LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=ClassCreator(arguments=[MemberReference(member=in, postfix_operators=[], prefix_operators=[], qualifier=System, selectors=[])], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=Scanner, sub_type=None)), name=scanner)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=Scanner, sub_type=None)), StatementExpression(expression=MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Enter your name: ")], member=print, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None), label=None), LocalVariableDeclaration(annotations=[], declarators=[VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[], member=nextLine, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), name=name)], modifiers=set(), type=ReferenceType(arguments=None, dimensions=[], name=String, sub_type=None)), StatementExpression(expression=MethodInvocation(arguments=[BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, "), operandr=MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="!"), operator=+)], member=println, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None), label=None), StatementExpression(expression=MethodInvocation(arguments=[], member=close, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), label=None)]
+Node type: <class 'javalang.tree.FormalParameter'>
+    modifiers: set()
+    annotations: []
+    type: ReferenceType(arguments=None, dimensions=[None], name=String, sub_type=None)
+    name: args
+    varargs: False
+Node type: <class 'javalang.tree.ReferenceType'>
+    name: String
+    dimensions: [None]
+    arguments: None
+    sub_type: None
+Node type: <class 'javalang.tree.LocalVariableDeclaration'>
+    modifiers: set()
+    annotations: []
+    type: ReferenceType(arguments=None, dimensions=[], name=Scanner, sub_type=None)
+    declarators: [VariableDeclarator(dimensions=[], initializer=ClassCreator(arguments=[MemberReference(member=in, postfix_operators=[], prefix_operators=[], qualifier=System, selectors=[])], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=Scanner, sub_type=None)), name=scanner)]
+Node type: <class 'javalang.tree.ReferenceType'>
+    name: Scanner
+    dimensions: []
+    arguments: None
+    sub_type: None
+Node type: <class 'javalang.tree.VariableDeclarator'>
+    name: scanner
+    dimensions: []
+    initializer: ClassCreator(arguments=[MemberReference(member=in, postfix_operators=[], prefix_operators=[], qualifier=System, selectors=[])], body=None, constructor_type_arguments=None, postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], type=ReferenceType(arguments=None, dimensions=None, name=Scanner, sub_type=None))
+Node type: <class 'javalang.tree.ClassCreator'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: None
+    selectors: []
+    type: ReferenceType(arguments=None, dimensions=None, name=Scanner, sub_type=None)
+    constructor_type_arguments: None
+    arguments: [MemberReference(member=in, postfix_operators=[], prefix_operators=[], qualifier=System, selectors=[])]
+    body: None
+Node type: <class 'javalang.tree.ReferenceType'>
+    name: Scanner
+    dimensions: None
+    arguments: None
+    sub_type: None
+Node type: <class 'javalang.tree.MemberReference'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: System
+    selectors: []
+    member: in
+Node type: <class 'javalang.tree.StatementExpression'>
+    label: None
+    expression: MethodInvocation(arguments=[Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Enter your name: ")], member=print, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None)
+Node type: <class 'javalang.tree.MethodInvocation'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: System.out
+    selectors: []
+    type_arguments: None
+    arguments: [Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Enter your name: ")]
+    member: print
+Node type: <class 'javalang.tree.Literal'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: None
+    selectors: []
+    value: "Enter your name: "
+Node type: <class 'javalang.tree.LocalVariableDeclaration'>
+    modifiers: set()
+    annotations: []
+    type: ReferenceType(arguments=None, dimensions=[], name=String, sub_type=None)
+    declarators: [VariableDeclarator(dimensions=[], initializer=MethodInvocation(arguments=[], member=nextLine, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None), name=name)]
+Node type: <class 'javalang.tree.ReferenceType'>
+    name: String
+    dimensions: []
+    arguments: None
+    sub_type: None
+Node type: <class 'javalang.tree.VariableDeclarator'>
+    name: name
+    dimensions: []
+    initializer: MethodInvocation(arguments=[], member=nextLine, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None)
+Node type: <class 'javalang.tree.MethodInvocation'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: scanner
+    selectors: []
+    type_arguments: None
+    arguments: []
+    member: nextLine
+Node type: <class 'javalang.tree.StatementExpression'>
+    label: None
+    expression: MethodInvocation(arguments=[BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, "), operandr=MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="!"), operator=+)], member=println, postfix_operators=[], prefix_operators=[], qualifier=System.out, selectors=[], type_arguments=None)
+Node type: <class 'javalang.tree.MethodInvocation'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: System.out
+    selectors: []
+    type_arguments: None
+    arguments: [BinaryOperation(operandl=BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, "), operandr=MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+), operandr=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="!"), operator=+)]
+    member: println
+Node type: <class 'javalang.tree.BinaryOperation'>
+    operator: +
+    operandl: BinaryOperation(operandl=Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, "), operandr=MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[]), operator=+)
+    operandr: Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="!")
+Node type: <class 'javalang.tree.BinaryOperation'>
+    operator: +
+    operandl: Literal(postfix_operators=[], prefix_operators=[], qualifier=None, selectors=[], value="Hello, ")
+    operandr: MemberReference(member=name, postfix_operators=[], prefix_operators=[], qualifier=, selectors=[])
+Node type: <class 'javalang.tree.Literal'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: None
+    selectors: []
+    value: "Hello, "
+Node type: <class 'javalang.tree.MemberReference'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: 
+    selectors: []
+    member: name
+Node type: <class 'javalang.tree.Literal'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: None
+    selectors: []
+    value: "!"
+Node type: <class 'javalang.tree.StatementExpression'>
+    label: None
+    expression: MethodInvocation(arguments=[], member=close, postfix_operators=[], prefix_operators=[], qualifier=scanner, selectors=[], type_arguments=None)
+Node type: <class 'javalang.tree.MethodInvocation'>
+    prefix_operators: []
+    postfix_operators: []
+    qualifier: scanner
+    selectors: []
+    type_arguments: None
+    arguments: []
+    member: close

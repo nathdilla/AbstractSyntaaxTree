@@ -1,0 +1,1786 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": "None",
+    "imports": [
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.ArrayList",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Scanner",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.UUID",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Date",
+            "static": "False",
+            "wildcard": "False"
+        }
+    ],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [],
+            "documentation": "None",
+            "name": "TaskManager",
+            "body": [
+                {
+                    "type": "<class 'javalang.tree.ClassDeclaration'>",
+                    "modifiers": "{'public', 'static'}",
+                    "annotations": [],
+                    "documentation": "None",
+                    "name": "Task",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "documentation": "None",
+                            "modifiers": "{'private'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "id",
+                                    "dimensions": [],
+                                    "initializer": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "documentation": "None",
+                            "modifiers": "{'private'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "name",
+                                    "dimensions": [],
+                                    "initializer": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Date",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "documentation": "None",
+                            "modifiers": "{'private'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "createdAt",
+                                    "dimensions": [],
+                                    "initializer": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.BasicType'>",
+                                "name": "boolean",
+                                "dimensions": []
+                            },
+                            "documentation": "None",
+                            "modifiers": "{'private'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "isCompleted",
+                                    "dimensions": [],
+                                    "initializer": "None"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.ConstructorDeclaration'>",
+                            "modifiers": "{'public'}",
+                            "annotations": [],
+                            "documentation": "None",
+                            "type_parameters": "None",
+                            "name": "Task",
+                            "parameters": [
+                                {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "String",
+                                        "dimensions": [],
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "modifiers": "set()",
+                                    "annotations": [],
+                                    "name": "name",
+                                    "varargs": "False"
+                                }
+                            ],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "=",
+                                        "expressionl": {
+                                            "type": "<class 'javalang.tree.This'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "member": "id"
+                                                }
+                                            ]
+                                        },
+                                        "value": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "UUID",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "type_arguments": "None",
+                                                    "arguments": [],
+                                                    "member": "toString"
+                                                }
+                                            ],
+                                            "type_arguments": "None",
+                                            "arguments": [],
+                                            "member": "randomUUID"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "=",
+                                        "expressionl": {
+                                            "type": "<class 'javalang.tree.This'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "member": "name"
+                                                }
+                                            ]
+                                        },
+                                        "value": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "name"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "=",
+                                        "expressionl": {
+                                            "type": "<class 'javalang.tree.This'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "member": "createdAt"
+                                                }
+                                            ]
+                                        },
+                                        "value": {
+                                            "type": {
+                                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                                "name": "Date",
+                                                "dimensions": "None",
+                                                "arguments": "None",
+                                                "sub_type": "None"
+                                            },
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "constructor_type_arguments": "None",
+                                            "arguments": [],
+                                            "body": "None"
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "=",
+                                        "expressionl": {
+                                            "type": "<class 'javalang.tree.This'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "member": "isCompleted"
+                                                }
+                                            ]
+                                        },
+                                        "value": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "false"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.MethodDeclaration'>",
+                            "documentation": "None",
+                            "modifiers": "{'public'}",
+                            "annotations": [],
+                            "type_parameters": "None",
+                            "return_type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "name": "getId",
+                            "parameters": [],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "id"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.MethodDeclaration'>",
+                            "documentation": "None",
+                            "modifiers": "{'public'}",
+                            "annotations": [],
+                            "type_parameters": "None",
+                            "return_type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "name": "getName",
+                            "parameters": [],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "name"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.MethodDeclaration'>",
+                            "documentation": "None",
+                            "modifiers": "{'public'}",
+                            "annotations": [],
+                            "type_parameters": "None",
+                            "return_type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Date",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "name": "getCreatedAt",
+                            "parameters": [],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "createdAt"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.MethodDeclaration'>",
+                            "documentation": "None",
+                            "modifiers": "{'public'}",
+                            "annotations": [],
+                            "type_parameters": "None",
+                            "return_type": {
+                                "type": "<class 'javalang.tree.BasicType'>",
+                                "name": "boolean",
+                                "dimensions": []
+                            },
+                            "name": "isCompleted",
+                            "parameters": [],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "isCompleted"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.MethodDeclaration'>",
+                            "documentation": "None",
+                            "modifiers": "{'public'}",
+                            "annotations": [],
+                            "type_parameters": "None",
+                            "return_type": "None",
+                            "name": "completeTask",
+                            "parameters": [],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "=",
+                                        "expressionl": {
+                                            "type": "<class 'javalang.tree.This'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "member": "isCompleted"
+                                                }
+                                            ]
+                                        },
+                                        "value": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "true"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.MethodDeclaration'>",
+                            "documentation": "None",
+                            "modifiers": "{'public'}",
+                            "annotations": [
+                                {
+                                    "type": "<class 'javalang.tree.Annotation'>",
+                                    "name": "Override",
+                                    "element": "None"
+                                }
+                            ],
+                            "type_parameters": "None",
+                            "return_type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "name": "toString",
+                            "parameters": [],
+                            "throws": "None",
+                            "body": [
+                                {
+                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.BinaryOperation'>",
+                                            "operator": "+",
+                                            "operandl": {
+                                                "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                "operator": "+",
+                                                "operandl": {
+                                                    "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                    "operator": "+",
+                                                    "operandl": {
+                                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                        "operator": "+",
+                                                        "operandl": {
+                                                            "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                            "operator": "+",
+                                                            "operandl": {
+                                                                "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                                "operator": "+",
+                                                                "operandl": {
+                                                                    "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                                    "operator": "+",
+                                                                    "operandl": {
+                                                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                                        "operator": "+",
+                                                                        "operandl": {
+                                                                            "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                                            "operator": "+",
+                                                                            "operandl": {
+                                                                                "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                                                "operator": "+",
+                                                                                "operandl": {
+                                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                                    "prefix_operators": [],
+                                                                                    "postfix_operators": [],
+                                                                                    "qualifier": "None",
+                                                                                    "selectors": [],
+                                                                                    "value": "\"Task{\""
+                                                                                },
+                                                                                "operandr": {
+                                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                                    "prefix_operators": [],
+                                                                                    "postfix_operators": [],
+                                                                                    "qualifier": "None",
+                                                                                    "selectors": [],
+                                                                                    "value": "\"id='\""
+                                                                                }
+                                                                            },
+                                                                            "operandr": {
+                                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "",
+                                                                                "selectors": [],
+                                                                                "member": "id"
+                                                                            }
+                                                                        },
+                                                                        "operandr": {
+                                                                            "type": "<class 'javalang.tree.Literal'>",
+                                                                            "prefix_operators": [],
+                                                                            "postfix_operators": [],
+                                                                            "qualifier": "None",
+                                                                            "selectors": [],
+                                                                            "value": "'\\''"
+                                                                        }
+                                                                    },
+                                                                    "operandr": {
+                                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                                        "prefix_operators": [],
+                                                                        "postfix_operators": [],
+                                                                        "qualifier": "None",
+                                                                        "selectors": [],
+                                                                        "value": "\", name='\""
+                                                                    }
+                                                                },
+                                                                "operandr": {
+                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "",
+                                                                    "selectors": [],
+                                                                    "member": "name"
+                                                                }
+                                                            },
+                                                            "operandr": {
+                                                                "type": "<class 'javalang.tree.Literal'>",
+                                                                "prefix_operators": [],
+                                                                "postfix_operators": [],
+                                                                "qualifier": "None",
+                                                                "selectors": [],
+                                                                "value": "'\\''"
+                                                            }
+                                                        },
+                                                        "operandr": {
+                                                            "type": "<class 'javalang.tree.Literal'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "None",
+                                                            "selectors": [],
+                                                            "value": "\", createdAt=\""
+                                                        }
+                                                    },
+                                                    "operandr": {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "createdAt"
+                                                    }
+                                                },
+                                                "operandr": {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\", isCompleted=\""
+                                                }
+                                            },
+                                            "operandr": {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "isCompleted"
+                                            }
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "'}'"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    "type_parameters": "None",
+                    "extends": "None",
+                    "implements": "None"
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "ArrayList",
+                        "dimensions": [],
+                        "arguments": [
+                            {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "Task",
+                                    "dimensions": [],
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                },
+                                "pattern_type": "None"
+                            }
+                        ],
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "tasks",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.ConstructorDeclaration'>",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "documentation": "None",
+                    "type_parameters": "None",
+                    "name": "TaskManager",
+                    "parameters": [],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "tasks"
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "ArrayList",
+                                        "dimensions": "None",
+                                        "arguments": [],
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [],
+                                    "body": "None"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "addTask",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "taskName",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Task",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "newTask",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Task",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "taskName"
+                                            }
+                                        ],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "tasks",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "newTask"
+                                    }
+                                ],
+                                "member": "add"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"Added task: \""
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "newTask"
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "completeTask",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "taskId",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.ForStatement'>",
+                            "label": "None",
+                            "control": {
+                                "type": "<class 'javalang.tree.EnhancedForControl'>",
+                                "var": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "Task",
+                                        "dimensions": [],
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "modifiers": "set()",
+                                    "annotations": [],
+                                    "declarators": [
+                                        {
+                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                            "name": "task",
+                                            "dimensions": "None",
+                                            "initializer": "None"
+                                        }
+                                    ]
+                                },
+                                "iterable": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "tasks"
+                                }
+                            },
+                            "body": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.IfStatement'>",
+                                        "label": "None",
+                                        "condition": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "task",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "type_arguments": "None",
+                                                    "arguments": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "",
+                                                            "selectors": [],
+                                                            "member": "taskId"
+                                                        }
+                                                    ],
+                                                    "member": "equals"
+                                                }
+                                            ],
+                                            "type_arguments": "None",
+                                            "arguments": [],
+                                            "member": "getId"
+                                        },
+                                        "then_statement": {
+                                            "type": "<class 'javalang.tree.BlockStatement'>",
+                                            "label": "None",
+                                            "statements": [
+                                                {
+                                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                                    "label": "None",
+                                                    "expression": {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "task",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [],
+                                                        "member": "completeTask"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                                    "label": "None",
+                                                    "expression": {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "System.out",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [
+                                                            {
+                                                                "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                                "operator": "+",
+                                                                "operandl": {
+                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "value": "\"Completed task: \""
+                                                                },
+                                                                "operandr": {
+                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "",
+                                                                    "selectors": [],
+                                                                    "member": "task"
+                                                                }
+                                                            }
+                                                        ],
+                                                        "member": "println"
+                                                    }
+                                                },
+                                                {
+                                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                                    "label": "None",
+                                                    "expression": "None"
+                                                }
+                                            ]
+                                        },
+                                        "else_statement": "None"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.BinaryOperation'>",
+                                            "operator": "+",
+                                            "operandl": {
+                                                "type": "<class 'javalang.tree.Literal'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "None",
+                                                "selectors": [],
+                                                "value": "\"Task with ID \""
+                                            },
+                                            "operandr": {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "taskId"
+                                            }
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\" not found.\""
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "displayTasks",
+                    "parameters": [],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.IfStatement'>",
+                            "label": "None",
+                            "condition": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "tasks",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "isEmpty"
+                            },
+                            "then_statement": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\"No tasks to display.\""
+                                                }
+                                            ],
+                                            "member": "println"
+                                        }
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.ReturnStatement'>",
+                                        "label": "None",
+                                        "expression": "None"
+                                    }
+                                ]
+                            },
+                            "else_statement": "None"
+                        },
+                        {
+                            "type": "<class 'javalang.tree.ForStatement'>",
+                            "label": "None",
+                            "control": {
+                                "type": "<class 'javalang.tree.EnhancedForControl'>",
+                                "var": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "Task",
+                                        "dimensions": [],
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "modifiers": "set()",
+                                    "annotations": [],
+                                    "declarators": [
+                                        {
+                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                            "name": "task",
+                                            "dimensions": "None",
+                                            "initializer": "None"
+                                        }
+                                    ]
+                                },
+                                "iterable": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "tasks"
+                                }
+                            },
+                            "body": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": [],
+                                                    "member": "task"
+                                                }
+                                            ],
+                                            "member": "println"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public', 'static'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "main",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [
+                                    "None"
+                                ],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "args",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "TaskManager",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "manager",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "TaskManager",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Scanner",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "scanner",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Scanner",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "System",
+                                                "selectors": [],
+                                                "member": "in"
+                                            }
+                                        ],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.WhileStatement'>",
+                            "label": "None",
+                            "condition": {
+                                "type": "<class 'javalang.tree.Literal'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "None",
+                                "selectors": [],
+                                "value": "true"
+                            },
+                            "body": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\"1. Add Task\""
+                                                }
+                                            ],
+                                            "member": "println"
+                                        }
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\"2. Complete Task\""
+                                                }
+                                            ],
+                                            "member": "println"
+                                        }
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\"3. Display Tasks\""
+                                                }
+                                            ],
+                                            "member": "println"
+                                        }
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\"4. Exit\""
+                                                }
+                                            ],
+                                            "member": "println"
+                                        }
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "System.out",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "\"Choose an option: \""
+                                                }
+                                            ],
+                                            "member": "print"
+                                        }
+                                    },
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.BasicType'>",
+                                            "name": "int",
+                                            "dimensions": []
+                                        },
+                                        "modifiers": "set()",
+                                        "annotations": [],
+                                        "declarators": [
+                                            {
+                                                "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                "name": "choice",
+                                                "dimensions": [],
+                                                "initializer": {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "scanner",
+                                                    "selectors": [],
+                                                    "type_arguments": "None",
+                                                    "arguments": [],
+                                                    "member": "nextInt"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "scanner",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [],
+                                            "member": "nextLine"
+                                        }
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.SwitchStatement'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "choice"
+                                        },
+                                        "cases": [
+                                            {
+                                                "type": "<class 'javalang.tree.SwitchStatementCase'>",
+                                                "case": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "1"
+                                                    }
+                                                ],
+                                                "statements": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "System.out",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "value": "\"Enter task name: \""
+                                                                }
+                                                            ],
+                                                            "member": "print"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": {
+                                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                                            "name": "String",
+                                                            "dimensions": [],
+                                                            "arguments": "None",
+                                                            "sub_type": "None"
+                                                        },
+                                                        "modifiers": "set()",
+                                                        "annotations": [],
+                                                        "declarators": [
+                                                            {
+                                                                "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                                "name": "taskName",
+                                                                "dimensions": [],
+                                                                "initializer": {
+                                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "scanner",
+                                                                    "selectors": [],
+                                                                    "type_arguments": "None",
+                                                                    "arguments": [],
+                                                                    "member": "nextLine"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "manager",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "",
+                                                                    "selectors": [],
+                                                                    "member": "taskName"
+                                                                }
+                                                            ],
+                                                            "member": "addTask"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.BreakStatement'>",
+                                                        "label": "None",
+                                                        "goto": "None"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.SwitchStatementCase'>",
+                                                "case": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "2"
+                                                    }
+                                                ],
+                                                "statements": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "System.out",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "value": "\"Enter task ID to complete: \""
+                                                                }
+                                                            ],
+                                                            "member": "print"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": {
+                                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                                            "name": "String",
+                                                            "dimensions": [],
+                                                            "arguments": "None",
+                                                            "sub_type": "None"
+                                                        },
+                                                        "modifiers": "set()",
+                                                        "annotations": [],
+                                                        "declarators": [
+                                                            {
+                                                                "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                                "name": "taskId",
+                                                                "dimensions": [],
+                                                                "initializer": {
+                                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "scanner",
+                                                                    "selectors": [],
+                                                                    "type_arguments": "None",
+                                                                    "arguments": [],
+                                                                    "member": "nextLine"
+                                                                }
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "manager",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "",
+                                                                    "selectors": [],
+                                                                    "member": "taskId"
+                                                                }
+                                                            ],
+                                                            "member": "completeTask"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.BreakStatement'>",
+                                                        "label": "None",
+                                                        "goto": "None"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.SwitchStatementCase'>",
+                                                "case": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "3"
+                                                    }
+                                                ],
+                                                "statements": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "manager",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [],
+                                                            "member": "displayTasks"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.BreakStatement'>",
+                                                        "label": "None",
+                                                        "goto": "None"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.SwitchStatementCase'>",
+                                                "case": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "4"
+                                                    }
+                                                ],
+                                                "statements": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "System.out",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "value": "\"Exiting...\""
+                                                                }
+                                                            ],
+                                                            "member": "println"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "System",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "value": "0"
+                                                                }
+                                                            ],
+                                                            "member": "exit"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.BreakStatement'>",
+                                                        "label": "None",
+                                                        "goto": "None"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.SwitchStatementCase'>",
+                                                "case": [],
+                                                "statements": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "System.out",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "value": "\"Invalid choice. Please select again.\""
+                                                                }
+                                                            ],
+                                                            "member": "println"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}
