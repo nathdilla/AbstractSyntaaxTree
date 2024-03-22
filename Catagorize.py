@@ -9,7 +9,7 @@ with open('prompt.txt', 'r') as f:
     prompt = f.read()
 
 # Load the documentation strings from a JSON file
-with open('import_docs.json', 'r') as f:
+with open('outputs/import_docs.json', 'r') as f:
     import_docs = json.load(f)
 
 command = "Given the description, output the corresponding label. Just give me the label, nothing else."
