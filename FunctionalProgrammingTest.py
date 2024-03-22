@@ -102,7 +102,7 @@ import json
 
 # Example usage
 if __name__ == "__main__":
-    filepath = 'output.json'
+    filepath = 'outputs/AST.json'
     roles_values, imports, types = read_and_process_ast(filepath)
     
     import_docs = {}
@@ -110,7 +110,7 @@ if __name__ == "__main__":
         documentation = get_documentation_from_import(import_node)
         import_docs[import_node] = documentation  # Store the documentation in a dictionary
 
-    with open('import_docs.json', 'w') as f:  # Open import_docs.json in write mode
+    with open('outputs/import_docs.json', 'w') as f:  # Open import_docs.json in write mode
         json.dump(import_docs, f, indent=4)  # Write the import documentation dictionary to the file as JSON
 
     

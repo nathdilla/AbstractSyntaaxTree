@@ -27,10 +27,10 @@ def node_to_dict(node):
     return node_dict
 
 if __name__ == "__main__":
-    java_file_path = "TaskManager.java"  # Hardcoded filename
+    java_file_path = "java/TaskManager.java"  # Hardcoded filename
     ast = generate_ast(java_file_path)
 
     if ast:
         ast_dict = node_to_dict(ast)
-        with open('output.json', 'w') as f:  # Open output.json in write mode
+        with open('outputs/AST.json', 'w') as f:  # Open output.json in write mode
             json.dump(ast_dict, f, indent=4)  # Write the AST dictionary to the file as JSON
