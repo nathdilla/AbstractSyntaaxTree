@@ -130,15 +130,16 @@ def upload_file():
             ast_dict = node_to_dict(ast)
             # Convert AST dict to formatted JSON string and store in session
             roles_values, imports, types = read_and_process_ast(ast_dict)
-            session['ast_data'] = ast_dict  # Store AST dict in session
+
             session['roles_values'] = roles_values
             session['imports'] = imports
             session['types'] = types
+
             # Fetch documentation for imports and store in session
             import_docs = {}
-            for import_node in imports:
-                documentation = get_documentation_from_import(import_node)
-                import_docs[import_node] = documentation
+            # for import_node in imports:
+            #     documentation = get_documentation_from_import(import_node)
+            #     import_docs[import_node] = documentation
             session['import_docs'] = import_docs
             json_str = json.dumps(ast_dict, indent=4)
             # Render the HTML template with JSON data
@@ -164,6 +165,13 @@ def analysis():
     imports = session.get('imports', [])
     types = session.get('types', [])
     import_docs = session.get('import_docs', {})
+
+    #print the session data
+    print("bruh")
+    print(roles_values)
+    print(imports)
+    print(types)
+    # print(import_docs) 
 
     return render_template('analysis.html', roles_values=roles_values, imports=imports, types=types, import_docs=import_docs)
 

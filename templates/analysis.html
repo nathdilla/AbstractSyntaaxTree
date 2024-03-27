@@ -7,10 +7,42 @@
 <body>
 <div class="container mt-3">
     <h2>Detailed Analysis</h2>
+
     <h3>Roles and Values</h3>
     <!-- Display roles and values -->
-    <h3>Imports and Types</h3>
-    <!-- Display imports and types -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Role</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rv in roles_values %}
+            <tr>
+                <td>{{ rv.role }}</td>
+                <td>{{ rv.value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Imports</h3>
+    <!-- Display imports -->
+    <ul>
+        {% for imp in imports %}
+        <li>{{ imp }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Types</h3>
+    <!-- Display types -->
+    <ul>
+        {% for type in types %}
+        <li>{{ type }}</li>
+        {% endfor %}
+    </ul>
+
     <h3>Documentation</h3>
     <div class="accordion" id="accordionExample">
         {% for import, doc in import_docs.items() %}
