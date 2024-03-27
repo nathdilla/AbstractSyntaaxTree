@@ -137,9 +137,9 @@ def upload_file():
 
             # Fetch documentation for imports and store in session
             import_docs = {}
-            # for import_node in imports:
-            #     documentation = get_documentation_from_import(import_node)
-            #     import_docs[import_node] = documentation
+            for import_node in imports:
+                documentation = get_documentation_from_import(import_node)
+                import_docs[import_node] = documentation
             session['import_docs'] = import_docs
             json_str = json.dumps(ast_dict, indent=4)
             # Render the HTML template with JSON data
@@ -171,7 +171,7 @@ def analysis():
     print(roles_values)
     print(imports)
     print(types)
-    # print(import_docs) 
+    print(import_docs) 
 
     return render_template('analysis.html', roles_values=roles_values, imports=imports, types=types, import_docs=import_docs)
 
