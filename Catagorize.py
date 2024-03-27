@@ -1,8 +1,13 @@
 import json
+import os
 from openai import OpenAI
+from dotenv import load_dotenv
 
+load_dotenv()
+
+key = os.getenv('OPENAI_SECRET_KEY')
 # Initialize the OpenAI client with your API key
-client = OpenAI(api_key='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')
+client = OpenAI(api_key=key)
 
 # Load the prompt from a file
 with open('prompt.txt', 'r') as f:
