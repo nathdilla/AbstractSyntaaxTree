@@ -4,6 +4,7 @@ import os
 import javalang
 import json
 import requests
+from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 
 # Setup Flask app
@@ -11,7 +12,7 @@ UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'java'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['SECRET_KEY'] = 'your_secret_key'  # Set a secret key for session management
+app.config['SECRET_KEY'] = os.getenv('openAI_key')  # secret key for session management
 app.config['SESSION_TYPE'] = 'filesystem'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure the upload directory exists
 
@@ -168,7 +169,6 @@ def analysis():
     import_docs = session.get('import_docs', {})
 
     #print the session data
-    print("bruh")
     print(roles_values)
     print(imports)
     print(types)
