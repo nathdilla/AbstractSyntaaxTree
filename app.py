@@ -12,6 +12,7 @@ ALLOWED_EXTENSIONS = {'java'}
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['SECRET_KEY'] = 'your_secret_key'  # Set a secret key for session management
+app.config['SESSION_TYPE'] = 'filesystem'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure the upload directory exists
 
 global_roles_values = []
