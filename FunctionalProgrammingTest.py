@@ -80,30 +80,20 @@ def get_documentation_from_import(import_statement):
         return f"An error occurred: {str(e)}"
 
 
-# # Example usage
-# if __name__ == "__main__":
-#     filepath = 'output.json'
-#     roles_values, imports, types = read_and_process_ast(filepath)
-    
-#     with open('documentation.txt', 'w') as f:  # Open documentation.txt in write mode
-#         f.write("Roles and Values:\n")
-#         f.write(str(roles_values))
-#         f.write("\n\nImports:\n")
-#         f.write(str(imports))
-#         f.write("\n\nTypes:\n")
-#         f.write(str(types))
-#         f.write("\n\n")
-
-#         for import_node in imports:
-#             documentation = get_documentation_from_import(import_node)
-#             f.write(documentation + '\n')  # Write the documentation to the file
-
 import json
 
 # Example usage
 if __name__ == "__main__":
     filepath = 'outputs/AST.json'
     roles_values, imports, types = read_and_process_ast(filepath)
+
+    print("Roles and Values:")
+    print(roles_values)
+    print("\nImports:")
+    print(imports)
+    print("\nTypes:")
+    print(types)
+
     
     import_docs = {}
     for import_node in imports:
