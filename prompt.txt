@@ -39,5 +39,5 @@ Setup	Internal app configurations
 User Interface (UI)	Delines forms, screens, visual controls
 Utility (Util)	Third-party libraries for general use
 Test	Test automation
-Here is a class description:
+Here are the class descriptions:
 
