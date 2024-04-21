@@ -3,9 +3,11 @@ from ExtractValues import ExtractValues
 from Summarize import Summarizer
 from Catagorize import Labeler
 from Similarity import Similarity
+from dotenv import load_dotenv
 import os
 
-API_KEY = 'sk-'
+load_dotenv()
+api_key = os.getenv('OPENAI_KEY')
 
 def GenerateReport(javaFile):
     filename = os.path.basename(javaFile).split('.')[0]
@@ -19,12 +21,12 @@ def GenerateReport(javaFile):
     ast_generator.generate_ast_json(OUTPUT_DIR+'/AST.json')
     extract_values = ExtractValues(OUTPUT_DIR+'/AST.json')
     extract_values.extract(OUTPUT_DIR)
-    summarizer = Summarizer(API_KEY)
+    summarizer = Summarizer(api_key)
     classSummary = summarizer.summarizeClass(OUTPUT_DIR+'/Documentation.json', outputPath=OUTPUT_DIR+'/ClassSummary.json')
     print(classSummary)
     functionSummary = summarizer.summarizeFunctions(OUTPUT_DIR+'/Functions.json', outputPath=OUTPUT_DIR+'/FunctionSummary.json')
     print(functionSummary)
-    labeler = Labeler(API_KEY)
+    labeler = Labeler(api_key)
     classDomains = labeler.getClassDomain(OUTPUT_DIR+'/Documentation.json', outputPath=OUTPUT_DIR+'/ClassDomains.json')
     print(classDomains)
     functionDomains = labeler.getFunctionDomain(OUTPUT_DIR+'/Functions.json', outputPath=OUTPUT_DIR+'/FunctionDomains.json')

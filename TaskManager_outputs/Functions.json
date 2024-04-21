@@ -1,0 +1,17 @@
+{
+    "java.util.Scanner.nextInt": {
+        "class": "java.util.Scanner",
+        "function": "nextInt",
+        "description": "Scans the next token of the input as an int.\n\n  An invocation of this method of the form\n nextInt() behaves in exactly the same way as the\n invocation nextInt(radix), where radix\n is the default radix of this scanner."
+    },
+    "java.util.UUID.randomUUID": {
+        "class": "java.util.UUID",
+        "function": "randomUUID",
+        "description": "Static factory to retrieve a type 4 (pseudo randomly generated) UUID.\n\n The UUID is generated using a cryptographically strong pseudo\n random number generator."
+    },
+    "java.util.Scanner.nextLine": {
+        "class": "java.util.Scanner",
+        "function": "nextLine",
+        "description": "Advances this scanner past the current line and returns the input\n that was skipped.\n\n This method returns the rest of the current line, excluding any line\n separator at the end. The position is set to the beginning of the next\n line.\n\n Since this method continues to search through the input looking\n for a line separator, it may buffer all of the input searching for\n the line to skip if no line separators are present."
+    }
+}
