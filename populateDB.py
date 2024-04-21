@@ -2,109 +2,63 @@ import psycopg2
 from psycopg2.extras import Json
 import json
 
-# Connect to your PostgreSQL database
-conn = psycopg2.connect(
-    dbname='pgPrinciples', 
-    user='postgres', 
-    password='Qazssedc9', 
-    host='localhost',
-    port=5432
-)
+def connect_db():
+    try:
+        conn = psycopg2.connect(
+            dbname='pgPrinciples', 
+            user='postgres', 
+            password='Qazssedc9', 
+            host='localhost',
+            port='5432'
+        )
+        return conn
+    except psycopg2.Error as e:
+        print("Error: Unable to connect to the database.")
+        print(e)
+        exit()
 
-if conn is None:
-    print("Error: Unable to connect to the database.")
-    exit()
-else:
-    print("Connected to the database")
+def load_json(file_path):
+    with open(file_path, 'r') as file:
+        return json.load(file)
 
-cur = conn.cursor()
+def insert_json_data(cur, json_data, table, columns):
+    for key, value in json_data.items():
+        cur.execute(
+            f"INSERT INTO public.{table} ({', '.join(columns)}) VALUES (%s, %s)", 
+            (key, value)
+        )
+        print(f"Inserted {key} into the {table} table")
 
-#------------------------------------------------------------
-# read the ClassDomains.json file
-with open('TaskManager_outputs/ClassDomains.json', 'r') as file:
-    domain_data = json.load(file)
-
-# Insert the data into the table
-for key, value in domain_data.items():
-    cur.execute("""
-                INSERT INTO public."ClassDomains" (import, type) VALUES (%s, %s)
-                """
-                , (key, value))
-    print(f"Inserted {key} into the ClassDomains table")
-
-#------------------------------------------------------------
-# Read the AST.json file
-with open('TaskManager_outputs/AST.json', 'r') as file:
-    ast_data = json.load(file)
-
-# Insert the data into the table
-for i in range(1):
-    cur.execute("""
-                INSERT INTO public.ast (ast_data) VALUES (%s)
-                """
-                , [Json(ast_data)])
-    print(f"Inserted into the AST table")
+def main():
+    conn = connect_db()
+    cur = conn.cursor()
     
+    domain_data = load_json('TaskManager_outputs/ClassDomains.json')
+    insert_json_data(cur, domain_data, "class_domains", ["import", "type"])
 
-#------------------------------------------------------------
-# read the ClassSummary.json file
-with open('TaskManager_outputs/ClassSummary.json', 'r') as file:
-    summary_data = json.load(file)
+    ast_data = load_json('TaskManager_outputs/AST.json')
+    cur.execute("INSERT INTO public.ast (ast_data) VALUES (%s)", [Json(ast_data)])
+    print("Inserted into the AST table")
 
-# Insert the data into the table
-for key, value in summary_data.items():
-    cur.execute("""
-                INSERT INTO public.class_summary (class_name, description) VALUES (%s, %s)
-                """
-                , (key, value))
-    print(f"Inserted {key} into the class summary table")
+    summary_data = load_json('TaskManager_outputs/ClassSummary.json')
+    insert_json_data(cur, summary_data, "class_summary", ["class_name", "description"])
 
-#------------------------------------------------------------
-# read the Documentation.json file
-with open('TaskManager_outputs/Documentation.json', 'r') as file:
-    documentation_data = json.load(file)
+    documentation_data = load_json('TaskManager_outputs/Documentation.json')
+    insert_json_data(cur, documentation_data, "documentation", ["import", "documentation"])
 
-# Insert the data into the table
-for key, value in documentation_data.items():
-    cur.execute("""
-                INSERT INTO public.documentation (import, documentation) VALUES (%s, %s)
-                """
-                , (key, value))
-    print(f"Inserted {key} into the class summary table")
+    func_domain_data = load_json('TaskManager_outputs/FunctionDomains.json')
+    insert_json_data(cur, func_domain_data, "function_domain", ["function_", "domain_"])
 
-#------------------------------------------------------------
-# read the FunctionDomains.json file
-with open('TaskManager_outputs/FunctionDomains.json', 'r') as file:
-    funcDomain_data = json.load(file)
+    function_data = load_json('TaskManager_outputs/Functions.json')
+    for key, info in function_data.items():
+        cur.execute(
+            "INSERT INTO public.functions (key, class_name, function_name, description) VALUES (%s, %s, %s, %s)",
+            (key, info['class'], info['function'], info['description'])
+        )
+        print(f"Inserted {key} into the functions table")
 
-# Insert the data into the table
-for key, value in funcDomain_data.items():
-    cur.execute("""
-                INSERT INTO public.function_domain (function_, domain_) VALUES (%s, %s)
-                """
-                , (key, value))
-    print(f"Inserted {key} into the class summary table")
-
-#------------------------------------------------------------
-# read the Functions.json file
-with open('TaskManager_outputs/Functions.json', 'r') as file:
-    function_data = json.load(file)
-
-# Insert the data into the table
-for key, info in function_data.items():
-    cur.execute("""
-                INSERT INTO public.functions (key, class_name, function_name, description) VALUES (%s, %s, %s, %s)
-                """
-                , (key, info['class'], info['function'], info['description'])
-                )
-    print(f"Inserted {key} into the functions table")
-
-#------------------------------------------------------------
-with open('TaskManager_outputs/Similarities.json', 'r') as file:
-    similarity_data = json.load(file)
-
-# Insert the data into the table
-for class_name, tests in similarity_data.items():
+    similarity_data = load_json('TaskManager_outputs/Similarities.json')
+    for class_name, tests in similarity_data.items():
         for test_name, category in tests.items():
             cur.execute(
                 "INSERT INTO similarities (class_name, test_name, category) VALUES (%s, %s, %s)",
@@ -112,10 +66,9 @@ for class_name, tests in similarity_data.items():
             )    
             print(f"Inserted {test_name} into the similarities table")
 
+    conn.commit()
+    cur.close()
+    conn.close()
 
-# Commit the transaction
-conn.commit()
-
-# Close the connection
-cur.close()
-conn.close()
+if __name__ == "__main__":
+    main()
