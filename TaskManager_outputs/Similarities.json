@@ -1,1 +1,6 @@
-{"ArrayList": {"Test": "Cloud"}, "Scanner": {"Test": "Logging"}, "UUID": {"Test": "Logging"}, "Date": {"Test": "Cloud"}}
+{
+  "ArrayList": { "Test": "Cloud" },
+  "Scanner": { "Test": "Logging" },
+  "UUID": { "Test": "Logging" },
+  "Date": { "Test": "Cloud" }
+}

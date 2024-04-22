@@ -1,1 +1,5 @@
-{"java.util.Scanner.nextInt": "Input-Output (IO)", "java.util.UUID.randomUUID": "Utility (Util)", "java.util.Scanner.nextLine": "Input-Output (IO)"}
+{
+  "java.util.Scanner.nextInt": "Input-Output (IO)",
+  "java.util.UUID.randomUUID": "Utility (Util)",
+  "java.util.Scanner.nextLine": "Input-Output (IO)"
+}
