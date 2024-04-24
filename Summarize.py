@@ -22,11 +22,3 @@ class Summarizer:
         request = self.requestAi.getRequest("Return a new json with just the function key and functions descriptions as the values. Summarize/simplify the descriptions: " + functions_str)
         StringToJson.convert_to_json(request, outputPath)
         return request
-
-# Example usage
-# api_key = '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'
-# summarizer = Summarizer(api_key)
-# results = summarizer.process_documentation()
-
-# for result in results:
-#     print(result)

@@ -1,0 +1,468 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": "None",
+    "imports": [
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.ArrayList",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Random",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.time.LocalDate",
+            "static": "False",
+            "wildcard": "False"
+        }
+    ],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [],
+            "documentation": "None",
+            "name": "SampleProgram",
+            "body": [
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'static', 'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "main",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [
+                                    "None"
+                                ],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "args",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Random",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "random",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Random",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.BasicType'>",
+                                "name": "int",
+                                "dimensions": []
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "randomNumber",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "random",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.Literal'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "None",
+                                                "selectors": [],
+                                                "value": "101"
+                                            }
+                                        ],
+                                        "member": "nextInt"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"Random Number: \""
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "randomNumber"
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "ArrayList",
+                                "dimensions": [],
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "String",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "pattern_type": "None"
+                                    }
+                                ],
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "list",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "ArrayList",
+                                            "dimensions": "None",
+                                            "arguments": [],
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "list",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"Apple\""
+                                    }
+                                ],
+                                "member": "add"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "list",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"Banana\""
+                                    }
+                                ],
+                                "member": "add"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "list",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"Cherry\""
+                                    }
+                                ],
+                                "member": "add"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"List of Fruits: \""
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "list"
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "LocalDate",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "currentDate",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "LocalDate",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "now"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"Today's Date: \""
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "currentDate"
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "randomFruit",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "list",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "random",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "list",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [],
+                                                        "member": "size"
+                                                    }
+                                                ],
+                                                "member": "nextInt"
+                                            }
+                                        ],
+                                        "member": "get"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"Random Fruit: \""
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "randomFruit"
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}

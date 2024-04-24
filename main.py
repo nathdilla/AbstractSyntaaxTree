@@ -4,6 +4,7 @@ from Summarize import Summarizer
 from Catagorize import Labeler
 from Similarity import Similarity
 from dotenv import load_dotenv
+from populateDB import PopulateDB
 import os
 
 load_dotenv()
@@ -34,5 +35,16 @@ def GenerateReport(javaFile):
     similarity = Similarity()
     similarities = similarity.getSimilarities(OUTPUT_DIR+'/Documentation.json', outputPath=OUTPUT_DIR+'/Similarities.json')
     print(similarities)
+    return OUTPUT_DIR
 
-GenerateReport('java/TaskManager.java')
+# loop through java file and generate report for each file
+# for file in os.listdir('java'):
+#     if file.endswith('.java'):
+#         outputfile = GenerateReport('java/'+file)
+#         PopulateDB(outputfile).populate()
+
+
+
+outputfile = GenerateReport('java/Sample.java')
+PopulateDB(outputfile).populate()
+PopulateDB('Sample_outputs').populate()

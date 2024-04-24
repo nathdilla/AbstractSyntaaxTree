@@ -1,5 +1,0 @@
-{
-  "java.util.Scanner.nextInt": "Scans the next token of the input as an int.",
-  "java.util.UUID.randomUUID": "Static factory to retrieve a type 4 UUID.",
-  "java.util.Scanner.nextLine": "Advances scanner past current line and returns input skipped."
-}

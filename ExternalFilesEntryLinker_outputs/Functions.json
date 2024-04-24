@@ -1,0 +1,18 @@
+{
+    "org.jabref.logic.util.io.FileUtil.copyFile": null,
+    "org.jabref.logic.util.io.FileUtil.getFileExtension": null,
+    "org.jabref.logic.util.io.FileUtil.relativize": null,
+    "java.util.Optional.ofNullable": {
+        "class": "java.util.Optional",
+        "function": "ofNullable",
+        "description": "Returns an Optional describing the given value, if\n non-null, otherwise returns an empty Optional."
+    },
+    "org.jabref.gui.externalfiletype.ExternalFileTypes.getExternalFileTypeByExt": null,
+    "org.slf4j.LoggerFactory.getLogger": null,
+    "org.jabref.logic.pdf.search.indexing.PdfIndexer.of": null,
+    "java.util.Optional.empty": {
+        "class": "java.util.Optional",
+        "function": "empty",
+        "description": "Returns an empty Optional instance.  No value is present for this\n Optional."
+    }
+}

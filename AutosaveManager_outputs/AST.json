@@ -1,0 +1,1301 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": {
+        "type": "<class 'javalang.tree.PackageDeclaration'>",
+        "modifiers": "None",
+        "annotations": "None",
+        "documentation": "None",
+        "name": "org.jabref.logic.autosaveandbackup"
+    },
+    "imports": [
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.HashSet",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Set",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.concurrent.ArrayBlockingQueue",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.concurrent.BlockingQueue",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.concurrent.ExecutorService",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.concurrent.RejectedExecutionException",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.concurrent.ThreadPoolExecutor",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.concurrent.TimeUnit",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.util.CoarseChangeFilter",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.database.BibDatabaseContext",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.database.event.AutosaveEvent",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.database.event.BibDatabaseContextChangedEvent",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "com.google.common.eventbus.EventBus",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "com.google.common.eventbus.Subscribe",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.slf4j.Logger",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.slf4j.LoggerFactory",
+            "static": "False",
+            "wildcard": "False"
+        }
+    ],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [],
+            "documentation": "/**\n * Saves the given {@link BibDatabaseContext} on every {@link BibDatabaseContextChangedEvent} by posting a new {@link AutosaveEvent}.\n *  * An intelligent {@link ExecutorService} with a {@link BlockingQueue} prevents a high load while saving and rejects all redundant save tasks.\n *  */",
+            "name": "AutosaveManager",
+            "body": [
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Logger",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private', 'static'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "LOGGER",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "LoggerFactory",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "AutosaveManager",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": []
+                                    }
+                                ],
+                                "member": "getLogger"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.BasicType'>",
+                        "name": "int",
+                        "dimensions": []
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private', 'static'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "DELAY_BETWEEN_AUTOSAVE_ATTEMPTS_IN_SECONDS",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": "<class 'javalang.tree.Literal'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "None",
+                                "selectors": [],
+                                "value": "31"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Set",
+                        "dimensions": [],
+                        "arguments": [
+                            {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "AutosaveManager",
+                                    "dimensions": [],
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                },
+                                "pattern_type": "None"
+                            }
+                        ],
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'private', 'static'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "runningInstances",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "HashSet",
+                                    "dimensions": "None",
+                                    "arguments": [],
+                                    "sub_type": "None"
+                                },
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "None",
+                                "selectors": [],
+                                "constructor_type_arguments": "None",
+                                "arguments": [],
+                                "body": "None"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "BibDatabaseContext",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "bibDatabaseContext",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "EventBus",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "eventBus",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "CoarseChangeFilter",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "changeFilter",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "BlockingQueue",
+                        "dimensions": [],
+                        "arguments": [
+                            {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "Runnable",
+                                    "dimensions": [],
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                },
+                                "pattern_type": "None"
+                            }
+                        ],
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "workerQueue",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "ExecutorService",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "executor",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.BasicType'>",
+                        "name": "boolean",
+                        "dimensions": []
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "needsSave",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": "<class 'javalang.tree.Literal'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "None",
+                                "selectors": [],
+                                "value": "false"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.ConstructorDeclaration'>",
+                    "modifiers": "{'private'}",
+                    "annotations": [],
+                    "documentation": "None",
+                    "type_parameters": "None",
+                    "name": "AutosaveManager",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibDatabaseContext",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "bibDatabaseContext",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "bibDatabaseContext"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "bibDatabaseContext"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "eventBus"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "EventBus",
+                                        "dimensions": "None",
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [],
+                                    "body": "None"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "changeFilter"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "CoarseChangeFilter",
+                                        "dimensions": "None",
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "bibDatabaseContext"
+                                        }
+                                    ],
+                                    "body": "None"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "changeFilter",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.This'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": []
+                                    }
+                                ],
+                                "member": "registerListener"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "workerQueue"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "ArrayBlockingQueue",
+                                        "dimensions": "None",
+                                        "arguments": [],
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [
+                                        {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "1"
+                                        }
+                                    ],
+                                    "body": "None"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "executor"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "ThreadPoolExecutor",
+                                        "dimensions": "None",
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [
+                                        {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "1"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "1"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "0"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "TimeUnit",
+                                            "selectors": [],
+                                            "member": "SECONDS"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "workerQueue"
+                                        }
+                                    ],
+                                    "body": "None"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [
+                        {
+                            "type": "<class 'javalang.tree.Annotation'>",
+                            "name": "Subscribe",
+                            "element": "None"
+                        }
+                    ],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "listen",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibDatabaseContextChangedEvent",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [
+                                {
+                                    "type": "<class 'javalang.tree.Annotation'>",
+                                    "name": "SuppressWarnings",
+                                    "element": {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"unused\""
+                                    }
+                                }
+                            ],
+                            "name": "event",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.TryStatement'>",
+                            "label": "None",
+                            "resources": "None",
+                            "block": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "executor",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                "parameters": [],
+                                                "body": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "eventBus",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": {
+                                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                        "name": "AutosaveEvent",
+                                                                        "dimensions": "None",
+                                                                        "arguments": "None",
+                                                                        "sub_type": "None"
+                                                                    },
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "None",
+                                                                    "selectors": [],
+                                                                    "constructor_type_arguments": "None",
+                                                                    "arguments": [],
+                                                                    "body": "None"
+                                                                }
+                                                            ],
+                                                            "member": "post"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "member": "submit"
+                                    }
+                                }
+                            ],
+                            "catches": [
+                                {
+                                    "type": "<class 'javalang.tree.CatchClause'>",
+                                    "label": "None",
+                                    "parameter": {
+                                        "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                        "modifiers": "None",
+                                        "annotations": "None",
+                                        "types": [
+                                            "RejectedExecutionException"
+                                        ],
+                                        "name": "e"
+                                    },
+                                    "block": [
+                                        {
+                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                            "label": "None",
+                                            "expression": {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "LOGGER",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "\"Rejecting autosave while another save process is already running.\""
+                                                    }
+                                                ],
+                                                "member": "debug"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "finally_block": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'private'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "shutdown",
+                    "parameters": [],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "changeFilter",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.This'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": []
+                                    }
+                                ],
+                                "member": "unregisterListener"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "changeFilter",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "shutdown"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "executor",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "shutdown"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Starts the Autosaver which is associated with the given {@link BibDatabaseContext}.\n     *\n     * @param bibDatabaseContext Associated {@link BibDatabaseContext}\n     */",
+                    "modifiers": "{'public', 'static'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "AutosaveManager",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "name": "start",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibDatabaseContext",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "bibDatabaseContext",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "AutosaveManager",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "autosaveManager",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "AutosaveManager",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "bibDatabaseContext"
+                                            }
+                                        ],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "runningInstances",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "autosaveManager"
+                                    }
+                                ],
+                                "member": "add"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.ReturnStatement'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MemberReference'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "member": "autosaveManager"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Shuts down the Autosaver which is associated with the given {@link BibDatabaseContext}.\n     *\n     * @param bibDatabaseContext Associated {@link BibDatabaseContext}\n     */",
+                    "modifiers": "{'public', 'static'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "shutdown",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibDatabaseContext",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "bibDatabaseContext",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "runningInstances",
+                                "selectors": [
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": "None",
+                                        "postfix_operators": "None",
+                                        "qualifier": "None",
+                                        "selectors": "None",
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                "parameters": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "instance"
+                                                    }
+                                                ],
+                                                "body": {
+                                                    "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                    "operator": "==",
+                                                    "operandl": {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "instance",
+                                                        "selectors": [],
+                                                        "member": "bibDatabaseContext"
+                                                    },
+                                                    "operandr": {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "bibDatabaseContext"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "member": "filter"
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": "None",
+                                        "postfix_operators": "None",
+                                        "qualifier": "None",
+                                        "selectors": "None",
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "findAny"
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": "None",
+                                        "postfix_operators": "None",
+                                        "qualifier": "None",
+                                        "selectors": "None",
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                "parameters": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "instance"
+                                                    }
+                                                ],
+                                                "body": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "instance",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [],
+                                                            "member": "shutdown"
+                                                        }
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "runningInstances",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "",
+                                                                    "selectors": [],
+                                                                    "member": "instance"
+                                                                }
+                                                            ],
+                                                            "member": "remove"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "member": "ifPresent"
+                                    }
+                                ],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "stream"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "registerListener",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Object",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "listener",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "eventBus",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "listener"
+                                    }
+                                ],
+                                "member": "register"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "unregisterListener",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Object",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "listener",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.TryStatement'>",
+                            "label": "None",
+                            "resources": "None",
+                            "block": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "eventBus",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "listener"
+                                            }
+                                        ],
+                                        "member": "unregister"
+                                    }
+                                }
+                            ],
+                            "catches": [
+                                {
+                                    "type": "<class 'javalang.tree.CatchClause'>",
+                                    "label": "None",
+                                    "parameter": {
+                                        "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                        "modifiers": "None",
+                                        "annotations": "None",
+                                        "types": [
+                                            "IllegalArgumentException"
+                                        ],
+                                        "name": "e"
+                                    },
+                                    "block": [
+                                        {
+                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                            "label": "None",
+                                            "expression": {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "LOGGER",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "\"Problem unregistering\""
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "e"
+                                                    }
+                                                ],
+                                                "member": "debug"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "finally_block": "None"
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}

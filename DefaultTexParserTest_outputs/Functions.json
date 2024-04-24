@@ -1,0 +1,12 @@
+{
+    "java.util.Arrays.asList": {
+        "class": "java.util.Arrays",
+        "function": "asList",
+        "description": "Returns a fixed-size list backed by the specified array.  (Changes to\n the returned list \"write through\" to the array.)  This method acts\n as bridge between array-based and collection-based APIs, in\n combination with Collection.toArray().  The returned list is\n serializable and implements RandomAccess.\n\n This method also provides a convenient way to create a fixed-size\n list initialized to contain several elements:\n \n     List<String> stooges = Arrays.asList(\"Larry\", \"Moe\", \"Curly\");"
+    },
+    "org.jabref.model.texparser.LatexParserResult.getFileList": null,
+    "org.jabref.model.texparser.LatexParserResult.getNestedFiles": null,
+    "org.jabref.model.texparser.LatexParserResult.addBibFile": null,
+    "java.nio.file.Path.of": null,
+    "org.jabref.model.texparser.LatexParserResult.addKey": null
+}

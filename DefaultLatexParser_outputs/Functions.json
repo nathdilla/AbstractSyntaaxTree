@@ -1,0 +1,29 @@
+{
+    "java.util.ArrayList.add": {
+        "class": "java.util.ArrayList",
+        "function": "add",
+        "description": "Appends the specified element to the end of this list."
+    },
+    "java.util.regex.Pattern.compile": {
+        "class": "java.util.regex.Pattern",
+        "function": "compile",
+        "description": "Compiles the given regular expression into a pattern."
+    },
+    "org.slf4j.LoggerFactory.getLogger": null,
+    "java.util.ArrayList.isEmpty": {
+        "class": "java.util.ArrayList",
+        "function": "isEmpty",
+        "description": "Returns true if this list contains no elements."
+    },
+    "java.nio.file.Path.of": null,
+    "java.nio.file.Files.newInputStream": {
+        "class": "java.nio.file.Files",
+        "function": "newInputStream",
+        "description": "Opens a file, returning an input stream to read from the file. The stream\n will not be buffered, and is not required to support the mark or reset methods. The\n stream will be safe for access by multiple concurrent threads. Reading\n commences at the beginning of the file. Whether the returned stream is\n asynchronously closeable and/or interruptible is highly\n file system provider specific and therefore not specified.\n\n  The options parameter determines how the file is opened.\n If no options are present then it is equivalent to opening the file with\n the READ option. In addition to the \n READ option, an implementation may also support additional implementation\n specific options."
+    },
+    "java.util.Collections.singletonList": {
+        "class": "java.util.Collections",
+        "function": "singletonList",
+        "description": "Returns an immutable list containing only the specified object.\n The returned list is serializable."
+    }
+}
