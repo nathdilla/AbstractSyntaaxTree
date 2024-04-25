@@ -32,7 +32,7 @@
                 {
                     "type": "<class 'javalang.tree.MethodDeclaration'>",
                     "documentation": "None",
-                    "modifiers": "{'static', 'public'}",
+                    "modifiers": "{'public', 'static'}",
                     "annotations": [],
                     "type_parameters": "None",
                     "return_type": "None",

@@ -1,0 +1,210 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": "None",
+    "imports": [
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Scanner",
+            "static": "False",
+            "wildcard": "False"
+        }
+    ],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [],
+            "documentation": "None",
+            "name": "InputOutputExample",
+            "body": [
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public', 'static'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "main",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [
+                                    "None"
+                                ],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "args",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Scanner",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "scanner",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Scanner",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "System",
+                                                "selectors": [],
+                                                "member": "in"
+                                            }
+                                        ],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"Enter your name: \""
+                                    }
+                                ],
+                                "member": "print"
+                            }
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "name",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "scanner",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "nextLine"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.BinaryOperation'>",
+                                        "operator": "+",
+                                        "operandl": {
+                                            "type": "<class 'javalang.tree.BinaryOperation'>",
+                                            "operator": "+",
+                                            "operandl": {
+                                                "type": "<class 'javalang.tree.Literal'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "None",
+                                                "selectors": [],
+                                                "value": "\"Hello, \""
+                                            },
+                                            "operandr": {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "name"
+                                            }
+                                        },
+                                        "operandr": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"!\""
+                                        }
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "scanner",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "close"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}

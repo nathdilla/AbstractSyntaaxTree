@@ -37,14 +37,26 @@ def GenerateReport(javaFile):
     print(similarities)
     return OUTPUT_DIR
 
-# loop through java file and generate report for each file
-# for file in os.listdir('java'):
-#     if file.endswith('.java'):
-#         outputfile = GenerateReport('java/'+file)
-#         PopulateDB(outputfile).populate()
+# loop through java file and generate report for each file, using threading to speed up the process
+import threading
+
+def process_file(file):
+    outputfile = GenerateReport('java/'+file)
+    PopulateDB(outputfile).populate()
+
+threads = []
+for file in os.listdir('java'):
+    if file.endswith('.java'):
+        thread = threading.Thread(target=process_file, args=(file,))
+        thread.start()
+        threads.append(thread)
+
+# Wait for all threads to complete
+for thread in threads:
+    thread.join()
 
 
 
-outputfile = GenerateReport('java/Sample.java')
-PopulateDB(outputfile).populate()
-PopulateDB('Sample_outputs').populate()
+# outputfile = GenerateReport('java/Sample.java')
+# PopulateDB(outputfile).populate()
+# PopulateDB('Sample_outputs').populate()

@@ -1,1 +1,1 @@
-{"java.util.Arrays.asList": "Returns a fixed-size list backed by the specified array. Acts as a bridge between array-based and collection-based APIs.", "org.jabref.model.texparser.LatexParserResult.getFileList": null, "org.jabref.model.texparser.LatexParserResult.getNestedFiles": null, "org.jabref.model.texparser.LatexParserResult.addBibFile": null, "java.nio.file.Path.of": null, "org.jabref.model.texparser.LatexParserResult.addKey": null}
+{"functions": "A set of actions that can be performed by the program"}

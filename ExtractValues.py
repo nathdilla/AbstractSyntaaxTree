@@ -68,40 +68,43 @@ class ExtractValues:
         return [func for func in functions if func['class'] in imports.values()]
 
     def extract(self, OUTPUT_DIR):
-        roles_values, imports, types = self.read_and_process_ast()
-        roles_values['function'] = self.remove_duplicates(roles_values['function'])
-        roles_values['function'] = self.filter_functions_by_imports(roles_values['function'], imports)
+        try:
+            roles_values, imports, types = self.read_and_process_ast()
+            roles_values['function'] = self.remove_duplicates(roles_values['function'])
+            roles_values['function'] = self.filter_functions_by_imports(roles_values['function'], imports)
+            print("Roles and Values:")
+            for role, values in roles_values.items():
+                print(f"\n{role.capitalize()}s:")
+                for value in values:
+                    print(value)
+                print("Error: roles_values is a list, not a dictionary.")
+            print("\nImports:")
+            print(imports)
 
-        print("Roles and Values:")
-        for role, values in roles_values.items():
-            print(f"\n{role.capitalize()}s:")
-            for value in values:
-                print(value)
-        print("\nImports:")
-        print(imports)
+            import_docs = {}
+            for imported, importStatement in imports.items():
+                documentation = self.get_documentation_from_import(importStatement)
+                import_docs[imported] = documentation
 
-        import_docs = {}
-        for imported, importStatement in imports.items():
-            documentation = self.get_documentation_from_import(importStatement)
-            import_docs[imported] = documentation
+            with open(OUTPUT_DIR+'/Documentation.json', 'w') as f:
+                json.dump(import_docs, f, indent=4)
 
-        with open(OUTPUT_DIR+'/Documentation.json', 'w') as f:
-            json.dump(import_docs, f, indent=4)
-
-        print("\Imported Functions:")
-        functions = {}
-        for value in roles_values['function']:
-            classToSearch = value['class']
-            function = value['function']
-            # print(f"\nClass: {classToSearch}, Function: {function}")
-            result = self.summarize_function(classToSearch, function)
-            #add result to functions dictionary
-            functions[classToSearch + '.' + function] = result
-            print(result)
-
+            print("\Imported Functions:")
+            functions = {}
+            for value in roles_values['function']:
+                classToSearch = value['class']
+                function = value['function']
+                # print(f"\nClass: {classToSearch}, Function: {function}")
+                result = self.summarize_function(classToSearch, function)
+                #add result to functions dictionary
+                functions[classToSearch + '.' + function] = result
+                print(result)
+            with open(OUTPUT_DIR+'/Functions.json', 'w') as f:
+                json.dump(functions, f, indent=4)
+        except Exception as e:
+            print(f"An error occurred: {str(e)}")
         with open(OUTPUT_DIR+'/Functions.json', 'w') as f:
-            json.dump(functions, f, indent=4)
-
+                json.dump("functions", f, indent=4)
         
 
     @staticmethod

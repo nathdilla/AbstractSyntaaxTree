@@ -1,1 +1,1 @@
-{"java.util.stream.Collectors.toSet": "Returns input elements into a new Set.", "java.util.stream.Collectors.toCollection": "Returns input elements into a new Collection in encounter order.", "java.util.stream.Collectors.joining": "Concatenates input elements into a String in encounter order."}
+{"functions": "A collection of reusable code that performs specific tasks"}

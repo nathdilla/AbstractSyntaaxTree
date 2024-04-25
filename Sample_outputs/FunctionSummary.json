@@ -1,1 +1,1 @@
-{"java.util.ArrayList.get": "Returns the element at the specified position in this list.", "java.util.Random.nextInt": "Returns the next pseudorandom, uniformly distributed int value from this random number generator's sequence.", "java.util.ArrayList.size": "Returns the number of elements in this list.", "java.time.LocalDate.now": "Obtains the current date from the system clock in the default time-zone.", "java.util.ArrayList.add": "Appends the specified element to the end of this list."}
+{"functions": "A collection of reusable code that performs specific tasks."}

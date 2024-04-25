@@ -62,7 +62,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {
@@ -89,7 +89,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {
@@ -116,7 +116,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {
@@ -143,7 +143,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {
@@ -170,7 +170,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {
@@ -197,7 +197,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {
@@ -224,7 +224,7 @@
                         "sub_type": "None"
                     },
                     "documentation": "None",
-                    "modifiers": "{'final', 'static', 'private'}",
+                    "modifiers": "{'private', 'final', 'static'}",
                     "annotations": [],
                     "declarators": [
                         {

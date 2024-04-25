@@ -1,17 +1,1 @@
-{
-    "java.util.stream.Collectors.toSet": {
-        "class": "java.util.stream.Collectors",
-        "function": "toSet",
-        "description": "Returns a Collector that accumulates the input elements into a\n new Set. There are no guarantees on the type, mutability,\n serializability, or thread-safety of the Set returned; if more\n control over the returned Set is required, use\n toCollection(Supplier).\n\n This is an unordered\n Collector."
-    },
-    "java.util.stream.Collectors.toCollection": {
-        "class": "java.util.stream.Collectors",
-        "function": "toCollection",
-        "description": "Returns a Collector that accumulates the input elements into a\n new Collection, in encounter order.  The Collection is\n created by the provided factory."
-    },
-    "java.util.stream.Collectors.joining": {
-        "class": "java.util.stream.Collectors",
-        "function": "joining",
-        "description": "Returns a Collector that concatenates the input elements into a\n String, in encounter order."
-    }
-}
+"functions"
