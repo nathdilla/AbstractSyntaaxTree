@@ -2,8 +2,6 @@ import json
 from RequestAI import RequestAI
 from StringToJson import StringToJson
 
-# Initialize the OpenAI client with your API key
-
 # Load the prompt from a file
 with open('prompt.txt', 'r') as f:
     prompt = f.read()
