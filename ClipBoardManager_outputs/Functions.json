@@ -1,0 +1,35 @@
+{
+    "java.util.Optional.ofNullable": {
+        "class": "java.util.Optional",
+        "function": "ofNullable",
+        "description": "Returns an Optional describing the given value, if\n non-null, otherwise returns an empty Optional."
+    },
+    "java.awt.Toolkit.getDefaultToolkit": {
+        "class": "java.awt.Toolkit",
+        "function": "getDefaultToolkit",
+        "description": "Gets the default toolkit.\n \n If a system property named \"java.awt.headless\" is set\n to true then the headless implementation\n of Toolkit is used,\n otherwise the default platform-specific implementation of\n Toolkit is used.\n \n If this Toolkit is not a headless implementation and if they exist, service\n providers of AccessibilityProvider will be loaded\n if specified by the system property\n javax.accessibility.assistive_technologies.\n \n An example of setting this property is to invoke Java with\n -Djavax.accessibility.assistive_technologies=MyServiceProvider.\n In addition to MyServiceProvider other service providers can be specified\n using a comma separated list.  Service providers are loaded after the AWT\n toolkit is created. All errors are handled via an AWTError exception.\n \n The names specified in the assistive_technologies property are used to query\n each service provider implementation.  If the requested name matches the\n name of the service provider, the\n AccessibilityProvider.activate() method will be invoked to activate the\n matching service provider."
+    },
+    "javafx.scene.input.ClipboardContent.putHtml": {
+        "class": "javafx.scene.input.ClipboardContent",
+        "function": "putHtml",
+        "description": "Puts an HTML String into the ClipboardContent. This is\n equivalent to invoking put(DataFormat.HTML, html).\n Setting this value to null effectively clears it\n from the ClipboardContent."
+    },
+    "org.slf4j.LoggerFactory.getLogger": null,
+    "javafx.scene.input.ClipboardContent.putString": {
+        "class": "javafx.scene.input.ClipboardContent",
+        "function": "putString",
+        "description": "Puts a plain text String into the ClipboardContent. This is\n equivalent to invoking put(DataFormat.PLAIN_TEXT, s).\n Setting this value to null effectively clears it\n from the ClipboardContent."
+    },
+    "org.jabref.logic.bibtex.BibEntryWriter.serializeAll": null,
+    "javafx.scene.input.Clipboard.getSystemClipboard": {
+        "class": "javafx.scene.input.Clipboard",
+        "function": "getSystemClipboard",
+        "description": "Gets the current system clipboard, through which data can be stored and\n retrieved. There is ever only one system clipboard for a JavaFX application."
+    },
+    "javafx.scene.input.ClipboardContent.put": null,
+    "javafx.application.Platform.runLater": {
+        "class": "javafx.application.Platform",
+        "function": "runLater",
+        "description": "Run the specified Runnable on the JavaFX Application Thread at some\n unspecified\n time in the future. This method, which may be called from any thread,\n will post the Runnable to an event queue and then return immediately to\n the caller. The Runnables are executed in the order they are posted.\n A runnable passed into the runLater method will be\n executed before any Runnable passed into a subsequent call to runLater.\n If this method is called after the JavaFX runtime has been shutdown, the\n call will be ignored: the Runnable will not be executed and no\n exception will be thrown.\n\n \n NOTE: applications should avoid flooding JavaFX with too many\n pending Runnables. Otherwise, the application may become unresponsive.\n Applications are encouraged to batch up multiple operations into fewer\n runLater calls.\n Additionally, long-running operations should be done on a background\n thread where possible, freeing up the JavaFX Application Thread for GUI\n operations.\n \n\n This method must not be called before the FX runtime has been\n initialized. For standard JavaFX applications that extend\n Application, and use either the Java launcher or one of the\n launch methods in the Application class to launch the application,\n the FX runtime is initialized by the launcher before the Application\n class is loaded.\n For Swing applications that use JFXPanel to display FX content, the FX\n runtime is initialized when the first JFXPanel instance is constructed.\n For SWT application that use FXCanvas to display FX content, the FX\n runtime is initialized when the first FXCanvas instance is constructed.\n For applications that do not follow any of these approaches, then it is\n necessary to manually start the JavaFX runtime by calling\n startup(Runnable) once."
+    }
+}

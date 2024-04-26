@@ -1,0 +1,71 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": "None",
+    "imports": [],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [],
+            "documentation": "None",
+            "name": "HelloWorld",
+            "body": [
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public', 'static'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "main",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [
+                                    "None"
+                                ],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "args",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "System.out",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"Hello, World!\""
+                                    }
+                                ],
+                                "member": "println"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}

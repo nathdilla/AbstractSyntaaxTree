@@ -1,0 +1,1987 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": {
+        "type": "<class 'javalang.tree.PackageDeclaration'>",
+        "modifiers": "None",
+        "annotations": "None",
+        "documentation": "None",
+        "name": "org.jabref.gui"
+    },
+    "imports": [
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.awt.Toolkit",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.awt.datatransfer.DataFlavor",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.awt.datatransfer.StringSelection",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.awt.datatransfer.Transferable",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.awt.datatransfer.UnsupportedFlavorException",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.io.IOException",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.List",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Optional",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "javafx.application.Platform",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "javafx.scene.control.TextInputControl",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "javafx.scene.input.Clipboard",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "javafx.scene.input.ClipboardContent",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "javafx.scene.input.DataFormat",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "javafx.scene.input.MouseButton",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.architecture.AllowedToUseAwt",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.bibtex.BibEntryWriter",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.bibtex.FieldWriter",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.database.BibDatabaseMode",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.entry.BibEntry",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.preferences.PreferencesService",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.slf4j.Logger",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.slf4j.LoggerFactory",
+            "static": "False",
+            "wildcard": "False"
+        }
+    ],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [
+                {
+                    "type": "<class 'javalang.tree.Annotation'>",
+                    "name": "AllowedToUseAwt",
+                    "element": {
+                        "type": "<class 'javalang.tree.Literal'>",
+                        "prefix_operators": [],
+                        "postfix_operators": [],
+                        "qualifier": "None",
+                        "selectors": [],
+                        "value": "\"Requires ava.awt.datatransfer.Clipboard\""
+                    }
+                }
+            ],
+            "documentation": "None",
+            "name": "ClipBoardManager",
+            "body": [
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "DataFormat",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'static', 'final', 'public'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "XML",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "DataFormat",
+                                    "dimensions": "None",
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                },
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "None",
+                                "selectors": [],
+                                "constructor_type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "\"application/xml\""
+                                    }
+                                ],
+                                "body": "None"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Logger",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'static', 'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "LOGGER",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "LoggerFactory",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "ClipBoardManager",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": []
+                                    }
+                                ],
+                                "member": "getLogger"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Clipboard",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'static', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "clipboard",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "java",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": {
+                            "type": "<class 'javalang.tree.ReferenceType'>",
+                            "name": "awt",
+                            "dimensions": "None",
+                            "arguments": "None",
+                            "sub_type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "datatransfer",
+                                "dimensions": "None",
+                                "arguments": "None",
+                                "sub_type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "Clipboard",
+                                    "dimensions": "None",
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                }
+                            }
+                        }
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'static', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "primary",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "PreferencesService",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "preferencesService",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.ConstructorDeclaration'>",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "documentation": "None",
+                    "type_parameters": "None",
+                    "name": "ClipBoardManager",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "PreferencesService",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "preferencesService",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.ExplicitConstructorInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "None",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "Clipboard",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "getSystemClipboard"
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "Toolkit",
+                                        "selectors": [
+                                            {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": "None",
+                                                "postfix_operators": "None",
+                                                "qualifier": "None",
+                                                "selectors": "None",
+                                                "type_arguments": "None",
+                                                "arguments": [],
+                                                "member": "getSystemSelection"
+                                            }
+                                        ],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "getDefaultToolkit"
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "preferencesService"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.ConstructorDeclaration'>",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "documentation": "None",
+                    "type_parameters": "None",
+                    "name": "ClipBoardManager",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Clipboard",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "clipboard",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "java",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "awt",
+                                    "dimensions": "None",
+                                    "arguments": "None",
+                                    "sub_type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "datatransfer",
+                                        "dimensions": "None",
+                                        "arguments": "None",
+                                        "sub_type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Clipboard",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        }
+                                    }
+                                }
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "primary",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "PreferencesService",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "preferencesService",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "ClipBoardManager",
+                                    "selectors": [],
+                                    "member": "clipboard"
+                                },
+                                "value": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "clipboard"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "ClipBoardManager",
+                                    "selectors": [],
+                                    "member": "primary"
+                                },
+                                "value": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "primary"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "preferencesService"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "preferencesService"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Add X11 clipboard support to a text input control. It is necessary to call this method in every input where you\n     * want to use it: {@code ClipBoardManager.addX11Support(TextInputControl input);}.\n     *\n     * @param input the TextInputControl (e.g., TextField, TextArea, and children) where adding this functionality.\n     * @see <a href=\"https://www.uninformativ.de/blog/postings/2017-04-02/0/POSTING-en.html\">Short summary for X11\n     * clipboards</a>\n     * @see <a href=\"https://unix.stackexchange.com/questions/139191/whats-the-difference-between-primary-selection-and-clipboard-buffer/139193#139193\">Longer\n     * text over clipboards</a>\n     */",
+                    "modifiers": "{'static', 'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "addX11Support",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "TextInputControl",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "input",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "input",
+                                "selectors": [
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": "None",
+                                        "postfix_operators": "None",
+                                        "qualifier": "None",
+                                        "selectors": "None",
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                "parameters": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "observable"
+                                                    }
+                                                ],
+                                                "body": {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "Platform",
+                                                    "selectors": [],
+                                                    "type_arguments": "None",
+                                                    "arguments": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                            "parameters": [],
+                                                            "body": [
+                                                                {
+                                                                    "type": {
+                                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                        "name": "String",
+                                                                        "dimensions": [],
+                                                                        "arguments": "None",
+                                                                        "sub_type": "None"
+                                                                    },
+                                                                    "modifiers": "set()",
+                                                                    "annotations": [],
+                                                                    "declarators": [
+                                                                        {
+                                                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                                            "name": "newValue",
+                                                                            "dimensions": [],
+                                                                            "initializer": {
+                                                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "input",
+                                                                                "selectors": [],
+                                                                                "type_arguments": "None",
+                                                                                "arguments": [],
+                                                                                "member": "getSelectedText"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "<class 'javalang.tree.IfStatement'>",
+                                                                    "label": "None",
+                                                                    "condition": {
+                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                        "prefix_operators": [
+                                                                            "!"
+                                                                        ],
+                                                                        "postfix_operators": [],
+                                                                        "qualifier": "newValue",
+                                                                        "selectors": [],
+                                                                        "type_arguments": "None",
+                                                                        "arguments": [],
+                                                                        "member": "isEmpty"
+                                                                    },
+                                                                    "then_statement": {
+                                                                        "type": "<class 'javalang.tree.BlockStatement'>",
+                                                                        "label": "None",
+                                                                        "statements": [
+                                                                            {
+                                                                                "type": "<class 'javalang.tree.StatementExpression'>",
+                                                                                "label": "None",
+                                                                                "expression": {
+                                                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                    "prefix_operators": [],
+                                                                                    "postfix_operators": [],
+                                                                                    "qualifier": "primary",
+                                                                                    "selectors": [],
+                                                                                    "type_arguments": "None",
+                                                                                    "arguments": [
+                                                                                        {
+                                                                                            "type": {
+                                                                                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                                                "name": "StringSelection",
+                                                                                                "dimensions": "None",
+                                                                                                "arguments": "None",
+                                                                                                "sub_type": "None"
+                                                                                            },
+                                                                                            "prefix_operators": [],
+                                                                                            "postfix_operators": [],
+                                                                                            "qualifier": "None",
+                                                                                            "selectors": [],
+                                                                                            "constructor_type_arguments": "None",
+                                                                                            "arguments": [
+                                                                                                {
+                                                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                                    "prefix_operators": [],
+                                                                                                    "postfix_operators": [],
+                                                                                                    "qualifier": "",
+                                                                                                    "selectors": [],
+                                                                                                    "member": "newValue"
+                                                                                                }
+                                                                                            ],
+                                                                                            "body": "None"
+                                                                                        },
+                                                                                        {
+                                                                                            "type": "<class 'javalang.tree.Literal'>",
+                                                                                            "prefix_operators": [],
+                                                                                            "postfix_operators": [],
+                                                                                            "qualifier": "None",
+                                                                                            "selectors": [],
+                                                                                            "value": "null"
+                                                                                        }
+                                                                                    ],
+                                                                                    "member": "setContents"
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    "else_statement": "None"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "member": "runLater"
+                                                }
+                                            }
+                                        ],
+                                        "member": "addListener"
+                                    }
+                                ],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "selectedTextProperty"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "input",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.LambdaExpression'>",
+                                        "parameters": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "event"
+                                            }
+                                        ],
+                                        "body": [
+                                            {
+                                                "type": "<class 'javalang.tree.IfStatement'>",
+                                                "label": "None",
+                                                "condition": {
+                                                    "type": "<class 'javalang.tree.BinaryOperation'>",
+                                                    "operator": "==",
+                                                    "operandl": {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "event",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [],
+                                                        "member": "getButton"
+                                                    },
+                                                    "operandr": {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "MouseButton",
+                                                        "selectors": [],
+                                                        "member": "MIDDLE"
+                                                    }
+                                                },
+                                                "then_statement": {
+                                                    "type": "<class 'javalang.tree.BlockStatement'>",
+                                                    "label": "None",
+                                                    "statements": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                                            "label": "None",
+                                                            "expression": {
+                                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                "prefix_operators": [],
+                                                                "postfix_operators": [],
+                                                                "qualifier": "input",
+                                                                "selectors": [],
+                                                                "type_arguments": "None",
+                                                                "arguments": [
+                                                                    {
+                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                        "prefix_operators": [],
+                                                                        "postfix_operators": [],
+                                                                        "qualifier": "input",
+                                                                        "selectors": [],
+                                                                        "type_arguments": "None",
+                                                                        "arguments": [],
+                                                                        "member": "getCaretPosition"
+                                                                    },
+                                                                    {
+                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                        "prefix_operators": [],
+                                                                        "postfix_operators": [],
+                                                                        "qualifier": "",
+                                                                        "selectors": [],
+                                                                        "type_arguments": "None",
+                                                                        "arguments": [],
+                                                                        "member": "getContentsPrimary"
+                                                                    }
+                                                                ],
+                                                                "member": "insertText"
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "else_statement": "None"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "member": "setOnMouseClicked"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Get the String residing on the system clipboard.\n     *\n     * @return any text found on the Clipboard; if none found, return an empty String.\n     */",
+                    "modifiers": "{'static', 'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "String",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "name": "getContents",
+                    "parameters": [],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "result",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "clipboard",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "getString"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.IfStatement'>",
+                            "label": "None",
+                            "condition": {
+                                "type": "<class 'javalang.tree.BinaryOperation'>",
+                                "operator": "==",
+                                "operandl": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "result"
+                                },
+                                "operandr": {
+                                    "type": "<class 'javalang.tree.Literal'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "value": "null"
+                                }
+                            },
+                            "then_statement": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.ReturnStatement'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "\"\""
+                                        }
+                                    }
+                                ]
+                            },
+                            "else_statement": "None"
+                        },
+                        {
+                            "type": "<class 'javalang.tree.ReturnStatement'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MemberReference'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "member": "result"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Optional",
+                        "dimensions": [],
+                        "arguments": [
+                            {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "String",
+                                    "dimensions": [],
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                },
+                                "pattern_type": "None"
+                            }
+                        ],
+                        "sub_type": "None"
+                    },
+                    "name": "getBibTeXEntriesFromClipbaord",
+                    "parameters": [],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.ReturnStatement'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "Optional",
+                                "selectors": [
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": "None",
+                                        "postfix_operators": "None",
+                                        "qualifier": "None",
+                                        "selectors": "None",
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MethodReference'>",
+                                                "expression": {
+                                                    "type": {
+                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                        "name": "String",
+                                                        "dimensions": "None",
+                                                        "arguments": "None",
+                                                        "sub_type": "None"
+                                                    },
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": []
+                                                },
+                                                "method": {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": [],
+                                                    "member": "cast"
+                                                },
+                                                "type_arguments": []
+                                            }
+                                        ],
+                                        "member": "map"
+                                    }
+                                ],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "clipboard",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "DragAndDropDataFormats",
+                                                "selectors": [],
+                                                "member": "ENTRIES"
+                                            }
+                                        ],
+                                        "member": "getContent"
+                                    }
+                                ],
+                                "member": "ofNullable"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Get the String residing on the primary clipboard.\n     *\n     * @return any text found on the primary Clipboard; if none found, try with the system clipboard.\n     */",
+                    "modifiers": "{'static', 'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "String",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "name": "getContentsPrimary",
+                    "parameters": [],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Transferable",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "contents",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "primary",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.Literal'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "None",
+                                                "selectors": [],
+                                                "value": "null"
+                                            }
+                                        ],
+                                        "member": "getContents"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.IfStatement'>",
+                            "label": "None",
+                            "condition": {
+                                "type": "<class 'javalang.tree.BinaryOperation'>",
+                                "operator": "&&",
+                                "operandl": {
+                                    "type": "<class 'javalang.tree.BinaryOperation'>",
+                                    "operator": "!=",
+                                    "operandl": {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "contents"
+                                    },
+                                    "operandr": {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "null"
+                                    }
+                                },
+                                "operandr": {
+                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "contents",
+                                    "selectors": [],
+                                    "type_arguments": "None",
+                                    "arguments": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "DataFlavor",
+                                            "selectors": [],
+                                            "member": "stringFlavor"
+                                        }
+                                    ],
+                                    "member": "isDataFlavorSupported"
+                                }
+                            },
+                            "then_statement": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.TryStatement'>",
+                                        "label": "None",
+                                        "resources": "None",
+                                        "block": [
+                                            {
+                                                "type": "<class 'javalang.tree.ReturnStatement'>",
+                                                "label": "None",
+                                                "expression": {
+                                                    "type": {
+                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                        "name": "String",
+                                                        "dimensions": [],
+                                                        "arguments": "None",
+                                                        "sub_type": "None"
+                                                    },
+                                                    "expression": {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "contents",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [
+                                                            {
+                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                "prefix_operators": [],
+                                                                "postfix_operators": [],
+                                                                "qualifier": "DataFlavor",
+                                                                "selectors": [],
+                                                                "member": "stringFlavor"
+                                                            }
+                                                        ],
+                                                        "member": "getTransferData"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "catches": [
+                                            {
+                                                "type": "<class 'javalang.tree.CatchClause'>",
+                                                "label": "None",
+                                                "parameter": {
+                                                    "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                                    "modifiers": "None",
+                                                    "annotations": "None",
+                                                    "types": [
+                                                        "UnsupportedFlavorException",
+                                                        "IOException"
+                                                    ],
+                                                    "name": "e"
+                                                },
+                                                "block": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                                        "label": "None",
+                                                        "expression": {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "LOGGER",
+                                                            "selectors": [],
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "e",
+                                                                    "selectors": [],
+                                                                    "type_arguments": "None",
+                                                                    "arguments": [],
+                                                                    "member": "getMessage"
+                                                                }
+                                                            ],
+                                                            "member": "warn"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "finally_block": "None"
+                                    }
+                                ]
+                            },
+                            "else_statement": "None"
+                        },
+                        {
+                            "type": "<class 'javalang.tree.ReturnStatement'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "getContents"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Puts content onto the system clipboard.\n     *\n     * @param content the ClipboardContent to set as current value of the system clipboard.\n     */",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "setContent",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "ClipboardContent",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "content",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "clipboard",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setContent"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setPrimaryClipboardContent"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "/**\n     * Puts content onto the primary clipboard.\n     *\n     * @param content the ClipboardContent to set as current value of the primary clipboard.\n     */",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "setPrimaryClipboardContent",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "ClipboardContent",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "content",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "primary",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "StringSelection",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "content",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [],
+                                                "member": "getString"
+                                            }
+                                        ],
+                                        "body": "None"
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.Literal'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "value": "null"
+                                    }
+                                ],
+                                "member": "setContents"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "setHtmlContent",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "html",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "fallbackPlain",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "ClipboardContent",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "{'final'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "content",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "ClipboardContent",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "content",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "html"
+                                    }
+                                ],
+                                "member": "putHtml"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "content",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "fallbackPlain"
+                                    }
+                                ],
+                                "member": "putString"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "clipboard",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setContent"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setPrimaryClipboardContent"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "setContent",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "string",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "ClipboardContent",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "{'final'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "content",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "ClipboardContent",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "content",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "string"
+                                    }
+                                ],
+                                "member": "putString"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "clipboard",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setContent"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setPrimaryClipboardContent"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "setContent",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "List",
+                                "dimensions": [],
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "BibEntry",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "pattern_type": "None"
+                                    }
+                                ],
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "entries",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": [
+                        "IOException"
+                    ],
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "ClipboardContent",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "{'final'}",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "content",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "ClipboardContent",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibEntryWriter",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "writer",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "BibEntryWriter",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "None",
+                                        "selectors": [],
+                                        "constructor_type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": {
+                                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                                    "name": "FieldWriter",
+                                                    "dimensions": "None",
+                                                    "arguments": "None",
+                                                    "sub_type": "None"
+                                                },
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "None",
+                                                "selectors": [],
+                                                "constructor_type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "preferencesService",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [],
+                                                        "member": "getFieldWriterPreferences"
+                                                    }
+                                                ],
+                                                "body": "None"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "Globals",
+                                                "selectors": [],
+                                                "member": "entryTypesManager"
+                                            }
+                                        ],
+                                        "body": "None"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "String",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "serializedEntries",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "writer",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entries"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "BibDatabaseMode",
+                                                "selectors": [],
+                                                "member": "BIBTEX"
+                                            }
+                                        ],
+                                        "member": "serializeAll"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "content",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "DragAndDropDataFormats",
+                                        "selectors": [],
+                                        "member": "ENTRIES"
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "serializedEntries"
+                                    }
+                                ],
+                                "member": "put"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "content",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "serializedEntries"
+                                    }
+                                ],
+                                "member": "putString"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "clipboard",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setContent"
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "content"
+                                    }
+                                ],
+                                "member": "setPrimaryClipboardContent"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}

@@ -1,0 +1,1916 @@
+{
+    "type": "<class 'javalang.tree.CompilationUnit'>",
+    "package": {
+        "type": "<class 'javalang.tree.PackageDeclaration'>",
+        "modifiers": "None",
+        "annotations": "None",
+        "documentation": "None",
+        "name": "org.jabref.gui.externalfiles"
+    },
+    "imports": [
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.gui.externalfiletype.ExternalFileType",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.gui.externalfiletype.ExternalFileTypes",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.gui.externalfiletype.UnknownExternalFileType",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.cleanup.MoveFilesCleanup",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.cleanup.RenamePdfCleanup",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.pdf.search.indexing.IndexingTaskManager",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.pdf.search.indexing.PdfIndexer",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.logic.util.io.FileUtil",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.database.BibDatabaseContext",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.entry.BibEntry",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.model.entry.LinkedFile",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.jabref.preferences.FilePreferences",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.slf4j.Logger",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "org.slf4j.LoggerFactory",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.io.IOException",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.nio.file.Path",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.List",
+            "static": "False",
+            "wildcard": "False"
+        },
+        {
+            "type": "<class 'javalang.tree.Import'>",
+            "path": "java.util.Optional",
+            "static": "False",
+            "wildcard": "False"
+        }
+    ],
+    "types": [
+        {
+            "type": "<class 'javalang.tree.ClassDeclaration'>",
+            "modifiers": "{'public'}",
+            "annotations": [],
+            "documentation": "None",
+            "name": "ExternalFilesEntryLinker",
+            "body": [
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Logger",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'static', 'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "LOGGER",
+                            "dimensions": [],
+                            "initializer": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "LoggerFactory",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "ExternalFilesEntryLinker",
+                                            "dimensions": "None",
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": []
+                                    }
+                                ],
+                                "member": "getLogger"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "FilePreferences",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "filePreferences",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "BibDatabaseContext",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "bibDatabaseContext",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "MoveFilesCleanup",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "moveFilesCleanup",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "RenamePdfCleanup",
+                        "dimensions": [],
+                        "arguments": "None",
+                        "sub_type": "None"
+                    },
+                    "documentation": "None",
+                    "modifiers": "{'final', 'private'}",
+                    "annotations": [],
+                    "declarators": [
+                        {
+                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                            "name": "renameFilesCleanup",
+                            "dimensions": [],
+                            "initializer": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.ConstructorDeclaration'>",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "documentation": "None",
+                    "type_parameters": "None",
+                    "name": "ExternalFilesEntryLinker",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "FilePreferences",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "filePreferences",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibDatabaseContext",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "bibDatabaseContext",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "filePreferences"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "filePreferences"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "bibDatabaseContext"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "bibDatabaseContext"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "moveFilesCleanup"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "MoveFilesCleanup",
+                                        "dimensions": "None",
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "bibDatabaseContext"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "filePreferences"
+                                        }
+                                    ],
+                                    "body": "None"
+                                }
+                            }
+                        },
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "=",
+                                "expressionl": {
+                                    "type": "<class 'javalang.tree.This'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": "None",
+                                            "postfix_operators": "None",
+                                            "qualifier": "None",
+                                            "selectors": "None",
+                                            "member": "renameFilesCleanup"
+                                        }
+                                    ]
+                                },
+                                "value": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "RenamePdfCleanup",
+                                        "dimensions": "None",
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "None",
+                                    "selectors": [],
+                                    "constructor_type_arguments": "None",
+                                    "arguments": [
+                                        {
+                                            "type": "<class 'javalang.tree.Literal'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "None",
+                                            "selectors": [],
+                                            "value": "false"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "bibDatabaseContext"
+                                        },
+                                        {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "filePreferences"
+                                        }
+                                    ],
+                                    "body": "None"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": {
+                        "type": "<class 'javalang.tree.ReferenceType'>",
+                        "name": "Optional",
+                        "dimensions": [],
+                        "arguments": [
+                            {
+                                "type": {
+                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                    "name": "Path",
+                                    "dimensions": [],
+                                    "arguments": "None",
+                                    "sub_type": "None"
+                                },
+                                "pattern_type": "None"
+                            }
+                        ],
+                        "sub_type": "None"
+                    },
+                    "name": "copyFileToFileDir",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Path",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "file",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "Optional",
+                                "dimensions": [],
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Path",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "pattern_type": "None"
+                                    }
+                                ],
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "declarators": [
+                                {
+                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                    "name": "firstExistingFileDir",
+                                    "dimensions": [],
+                                    "initializer": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "bibDatabaseContext",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "filePreferences"
+                                            }
+                                        ],
+                                        "member": "getFirstExistingFileDir"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "<class 'javalang.tree.IfStatement'>",
+                            "label": "None",
+                            "condition": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "firstExistingFileDir",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "isPresent"
+                            },
+                            "then_statement": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Path",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "modifiers": "set()",
+                                        "annotations": [],
+                                        "declarators": [
+                                            {
+                                                "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                "name": "targetFile",
+                                                "dimensions": [],
+                                                "initializer": {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "firstExistingFileDir",
+                                                    "selectors": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": "None",
+                                                            "postfix_operators": "None",
+                                                            "qualifier": "None",
+                                                            "selectors": "None",
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "file",
+                                                                    "selectors": [],
+                                                                    "type_arguments": "None",
+                                                                    "arguments": [],
+                                                                    "member": "getFileName"
+                                                                }
+                                                            ],
+                                                            "member": "resolve"
+                                                        }
+                                                    ],
+                                                    "type_arguments": "None",
+                                                    "arguments": [],
+                                                    "member": "get"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "<class 'javalang.tree.IfStatement'>",
+                                        "label": "None",
+                                        "condition": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "FileUtil",
+                                            "selectors": [],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": [],
+                                                    "member": "file"
+                                                },
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": [],
+                                                    "member": "targetFile"
+                                                },
+                                                {
+                                                    "type": "<class 'javalang.tree.Literal'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "None",
+                                                    "selectors": [],
+                                                    "value": "false"
+                                                }
+                                            ],
+                                            "member": "copyFile"
+                                        },
+                                        "then_statement": {
+                                            "type": "<class 'javalang.tree.BlockStatement'>",
+                                            "label": "None",
+                                            "statements": [
+                                                {
+                                                    "type": "<class 'javalang.tree.ReturnStatement'>",
+                                                    "label": "None",
+                                                    "expression": {
+                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "Optional",
+                                                        "selectors": [],
+                                                        "type_arguments": "None",
+                                                        "arguments": [
+                                                            {
+                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                "prefix_operators": [],
+                                                                "postfix_operators": [],
+                                                                "qualifier": "",
+                                                                "selectors": [],
+                                                                "member": "targetFile"
+                                                            }
+                                                        ],
+                                                        "member": "ofNullable"
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "else_statement": "None"
+                                    }
+                                ]
+                            },
+                            "else_statement": "None"
+                        },
+                        {
+                            "type": "<class 'javalang.tree.ReturnStatement'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "Optional",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [],
+                                "member": "empty"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "renameLinkedFilesToPattern",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibEntry",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "entry",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "renameFilesCleanup",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "entry"
+                                    }
+                                ],
+                                "member": "cleanup"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "moveLinkedFilesToFileDir",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibEntry",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "entry",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.StatementExpression'>",
+                            "label": "None",
+                            "expression": {
+                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                "prefix_operators": [],
+                                "postfix_operators": [],
+                                "qualifier": "moveFilesCleanup",
+                                "selectors": [],
+                                "type_arguments": "None",
+                                "arguments": [
+                                    {
+                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "member": "entry"
+                                    }
+                                ],
+                                "member": "cleanup"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "addFilesToEntry",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibEntry",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "entry",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "List",
+                                "dimensions": [],
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Path",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "pattern_type": "None"
+                                    }
+                                ],
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "files",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.ForStatement'>",
+                            "label": "None",
+                            "control": {
+                                "type": "<class 'javalang.tree.EnhancedForControl'>",
+                                "var": {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "Path",
+                                        "dimensions": [],
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "modifiers": "set()",
+                                    "annotations": [],
+                                    "declarators": [
+                                        {
+                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                            "name": "file",
+                                            "dimensions": "None",
+                                            "initializer": "None"
+                                        }
+                                    ]
+                                },
+                                "iterable": {
+                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                    "prefix_operators": [],
+                                    "postfix_operators": [],
+                                    "qualifier": "",
+                                    "selectors": [],
+                                    "member": "files"
+                                }
+                            },
+                            "body": {
+                                "type": "<class 'javalang.tree.BlockStatement'>",
+                                "label": "None",
+                                "statements": [
+                                    {
+                                        "type": "<class 'javalang.tree.StatementExpression'>",
+                                        "label": "None",
+                                        "expression": {
+                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "FileUtil",
+                                            "selectors": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": "None",
+                                                    "postfix_operators": "None",
+                                                    "qualifier": "None",
+                                                    "selectors": "None",
+                                                    "type_arguments": "None",
+                                                    "arguments": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                            "parameters": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                                    "prefix_operators": [],
+                                                                    "postfix_operators": [],
+                                                                    "qualifier": "",
+                                                                    "selectors": [],
+                                                                    "member": "ext"
+                                                                }
+                                                            ],
+                                                            "body": [
+                                                                {
+                                                                    "type": {
+                                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                        "name": "ExternalFileType",
+                                                                        "dimensions": [],
+                                                                        "arguments": "None",
+                                                                        "sub_type": "None"
+                                                                    },
+                                                                    "modifiers": "set()",
+                                                                    "annotations": [],
+                                                                    "declarators": [
+                                                                        {
+                                                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                                            "name": "type",
+                                                                            "dimensions": [],
+                                                                            "initializer": {
+                                                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "ExternalFileTypes",
+                                                                                "selectors": [
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                        "prefix_operators": "None",
+                                                                                        "postfix_operators": "None",
+                                                                                        "qualifier": "None",
+                                                                                        "selectors": "None",
+                                                                                        "type_arguments": "None",
+                                                                                        "arguments": [
+                                                                                            {
+                                                                                                "type": {
+                                                                                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                                                    "name": "UnknownExternalFileType",
+                                                                                                    "dimensions": "None",
+                                                                                                    "arguments": "None",
+                                                                                                    "sub_type": "None"
+                                                                                                },
+                                                                                                "prefix_operators": [],
+                                                                                                "postfix_operators": [],
+                                                                                                "qualifier": "None",
+                                                                                                "selectors": [],
+                                                                                                "constructor_type_arguments": "None",
+                                                                                                "arguments": [
+                                                                                                    {
+                                                                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                                        "prefix_operators": [],
+                                                                                                        "postfix_operators": [],
+                                                                                                        "qualifier": "",
+                                                                                                        "selectors": [],
+                                                                                                        "member": "ext"
+                                                                                                    }
+                                                                                                ],
+                                                                                                "body": "None"
+                                                                                            }
+                                                                                        ],
+                                                                                        "member": "orElse"
+                                                                                    }
+                                                                                ],
+                                                                                "type_arguments": "None",
+                                                                                "arguments": [
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "",
+                                                                                        "selectors": [],
+                                                                                        "member": "ext"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "",
+                                                                                        "selectors": [],
+                                                                                        "member": "filePreferences"
+                                                                                    }
+                                                                                ],
+                                                                                "member": "getExternalFileTypeByExt"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": {
+                                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                        "name": "Path",
+                                                                        "dimensions": [],
+                                                                        "arguments": "None",
+                                                                        "sub_type": "None"
+                                                                    },
+                                                                    "modifiers": "set()",
+                                                                    "annotations": [],
+                                                                    "declarators": [
+                                                                        {
+                                                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                                            "name": "relativePath",
+                                                                            "dimensions": [],
+                                                                            "initializer": {
+                                                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "FileUtil",
+                                                                                "selectors": [],
+                                                                                "type_arguments": "None",
+                                                                                "arguments": [
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "",
+                                                                                        "selectors": [],
+                                                                                        "member": "file"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "bibDatabaseContext",
+                                                                                        "selectors": [],
+                                                                                        "type_arguments": "None",
+                                                                                        "arguments": [
+                                                                                            {
+                                                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                                "prefix_operators": [],
+                                                                                                "postfix_operators": [],
+                                                                                                "qualifier": "",
+                                                                                                "selectors": [],
+                                                                                                "member": "filePreferences"
+                                                                                            }
+                                                                                        ],
+                                                                                        "member": "getFileDirectories"
+                                                                                    }
+                                                                                ],
+                                                                                "member": "relativize"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": {
+                                                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                        "name": "LinkedFile",
+                                                                        "dimensions": [],
+                                                                        "arguments": "None",
+                                                                        "sub_type": "None"
+                                                                    },
+                                                                    "modifiers": "set()",
+                                                                    "annotations": [],
+                                                                    "declarators": [
+                                                                        {
+                                                                            "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                                            "name": "linkedfile",
+                                                                            "dimensions": [],
+                                                                            "initializer": {
+                                                                                "type": {
+                                                                                    "type": "<class 'javalang.tree.ReferenceType'>",
+                                                                                    "name": "LinkedFile",
+                                                                                    "dimensions": "None",
+                                                                                    "arguments": "None",
+                                                                                    "sub_type": "None"
+                                                                                },
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "None",
+                                                                                "selectors": [],
+                                                                                "constructor_type_arguments": "None",
+                                                                                "arguments": [
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "None",
+                                                                                        "selectors": [],
+                                                                                        "value": "\"\""
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "",
+                                                                                        "selectors": [],
+                                                                                        "member": "relativePath"
+                                                                                    },
+                                                                                    {
+                                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                                        "prefix_operators": [],
+                                                                                        "postfix_operators": [],
+                                                                                        "qualifier": "type",
+                                                                                        "selectors": [],
+                                                                                        "type_arguments": "None",
+                                                                                        "arguments": [],
+                                                                                        "member": "getName"
+                                                                                    }
+                                                                                ],
+                                                                                "body": "None"
+                                                                            }
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                                                    "label": "None",
+                                                                    "expression": {
+                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                        "prefix_operators": [],
+                                                                        "postfix_operators": [],
+                                                                        "qualifier": "entry",
+                                                                        "selectors": [],
+                                                                        "type_arguments": "None",
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "",
+                                                                                "selectors": [],
+                                                                                "member": "linkedfile"
+                                                                            }
+                                                                        ],
+                                                                        "member": "addFile"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "member": "ifPresent"
+                                                }
+                                            ],
+                                            "type_arguments": "None",
+                                            "arguments": [
+                                                {
+                                                    "type": "<class 'javalang.tree.MemberReference'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": [],
+                                                    "member": "file"
+                                                }
+                                            ],
+                                            "member": "getFileExtension"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "moveFilesToFileDirAndAddToEntry",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibEntry",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "entry",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "List",
+                                "dimensions": [],
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Path",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "pattern_type": "None"
+                                    }
+                                ],
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "files",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "IndexingTaskManager",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "indexingTaskManager",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.TryStatement'>",
+                            "label": "None",
+                            "resources": [
+                                {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "AutoCloseable",
+                                        "dimensions": [],
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "modifiers": "set()",
+                                    "annotations": [],
+                                    "name": "blocker",
+                                    "value": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "indexingTaskManager",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "blockNewTasks"
+                                    }
+                                }
+                            ],
+                            "block": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entry"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "files"
+                                            }
+                                        ],
+                                        "member": "addFilesToEntry"
+                                    }
+                                },
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entry"
+                                            }
+                                        ],
+                                        "member": "moveLinkedFilesToFileDir"
+                                    }
+                                },
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entry"
+                                            }
+                                        ],
+                                        "member": "renameLinkedFilesToPattern"
+                                    }
+                                }
+                            ],
+                            "catches": [
+                                {
+                                    "type": "<class 'javalang.tree.CatchClause'>",
+                                    "label": "None",
+                                    "parameter": {
+                                        "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                        "modifiers": "None",
+                                        "annotations": "None",
+                                        "types": [
+                                            "Exception"
+                                        ],
+                                        "name": "e"
+                                    },
+                                    "block": [
+                                        {
+                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                            "label": "None",
+                                            "expression": {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "LOGGER",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "\"Could not block IndexingTaskManager\""
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "e"
+                                                    }
+                                                ],
+                                                "member": "error"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "finally_block": "None"
+                        },
+                        {
+                            "type": "<class 'javalang.tree.TryStatement'>",
+                            "label": "None",
+                            "resources": "None",
+                            "block": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "indexingTaskManager",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "PdfIndexer",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "bibDatabaseContext"
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "filePreferences"
+                                                    }
+                                                ],
+                                                "member": "of"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entry"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "bibDatabaseContext"
+                                            }
+                                        ],
+                                        "member": "addToIndex"
+                                    }
+                                }
+                            ],
+                            "catches": [
+                                {
+                                    "type": "<class 'javalang.tree.CatchClause'>",
+                                    "label": "None",
+                                    "parameter": {
+                                        "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                        "modifiers": "None",
+                                        "annotations": "None",
+                                        "types": [
+                                            "IOException"
+                                        ],
+                                        "name": "e"
+                                    },
+                                    "block": [
+                                        {
+                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                            "label": "None",
+                                            "expression": {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "LOGGER",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "\"Could not access Fulltext-Index\""
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "e"
+                                                    }
+                                                ],
+                                                "member": "error"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "finally_block": "None"
+                        }
+                    ]
+                },
+                {
+                    "type": "<class 'javalang.tree.MethodDeclaration'>",
+                    "documentation": "None",
+                    "modifiers": "{'public'}",
+                    "annotations": [],
+                    "type_parameters": "None",
+                    "return_type": "None",
+                    "name": "copyFilesToFileDirAndAddToEntry",
+                    "parameters": [
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "BibEntry",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "entry",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "List",
+                                "dimensions": [],
+                                "arguments": [
+                                    {
+                                        "type": {
+                                            "type": "<class 'javalang.tree.ReferenceType'>",
+                                            "name": "Path",
+                                            "dimensions": [],
+                                            "arguments": "None",
+                                            "sub_type": "None"
+                                        },
+                                        "pattern_type": "None"
+                                    }
+                                ],
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "files",
+                            "varargs": "False"
+                        },
+                        {
+                            "type": {
+                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                "name": "IndexingTaskManager",
+                                "dimensions": [],
+                                "arguments": "None",
+                                "sub_type": "None"
+                            },
+                            "modifiers": "set()",
+                            "annotations": [],
+                            "name": "indexingTaskManager",
+                            "varargs": "False"
+                        }
+                    ],
+                    "throws": "None",
+                    "body": [
+                        {
+                            "type": "<class 'javalang.tree.TryStatement'>",
+                            "label": "None",
+                            "resources": [
+                                {
+                                    "type": {
+                                        "type": "<class 'javalang.tree.ReferenceType'>",
+                                        "name": "AutoCloseable",
+                                        "dimensions": [],
+                                        "arguments": "None",
+                                        "sub_type": "None"
+                                    },
+                                    "modifiers": "set()",
+                                    "annotations": [],
+                                    "name": "blocker",
+                                    "value": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "indexingTaskManager",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [],
+                                        "member": "blockNewTasks"
+                                    }
+                                }
+                            ],
+                            "block": [
+                                {
+                                    "type": "<class 'javalang.tree.ForStatement'>",
+                                    "label": "None",
+                                    "control": {
+                                        "type": "<class 'javalang.tree.EnhancedForControl'>",
+                                        "var": {
+                                            "type": {
+                                                "type": "<class 'javalang.tree.ReferenceType'>",
+                                                "name": "Path",
+                                                "dimensions": [],
+                                                "arguments": "None",
+                                                "sub_type": "None"
+                                            },
+                                            "modifiers": "set()",
+                                            "annotations": [],
+                                            "declarators": [
+                                                {
+                                                    "type": "<class 'javalang.tree.VariableDeclarator'>",
+                                                    "name": "file",
+                                                    "dimensions": "None",
+                                                    "initializer": "None"
+                                                }
+                                            ]
+                                        },
+                                        "iterable": {
+                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                            "prefix_operators": [],
+                                            "postfix_operators": [],
+                                            "qualifier": "",
+                                            "selectors": [],
+                                            "member": "files"
+                                        }
+                                    },
+                                    "body": {
+                                        "type": "<class 'javalang.tree.BlockStatement'>",
+                                        "label": "None",
+                                        "statements": [
+                                            {
+                                                "type": "<class 'javalang.tree.StatementExpression'>",
+                                                "label": "None",
+                                                "expression": {
+                                                    "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                    "prefix_operators": [],
+                                                    "postfix_operators": [],
+                                                    "qualifier": "",
+                                                    "selectors": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                            "prefix_operators": "None",
+                                                            "postfix_operators": "None",
+                                                            "qualifier": "None",
+                                                            "selectors": "None",
+                                                            "type_arguments": "None",
+                                                            "arguments": [
+                                                                {
+                                                                    "type": "<class 'javalang.tree.LambdaExpression'>",
+                                                                    "parameters": [
+                                                                        {
+                                                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                                                            "prefix_operators": [],
+                                                                            "postfix_operators": [],
+                                                                            "qualifier": "",
+                                                                            "selectors": [],
+                                                                            "member": "copiedFile"
+                                                                        }
+                                                                    ],
+                                                                    "body": {
+                                                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                                        "prefix_operators": [],
+                                                                        "postfix_operators": [],
+                                                                        "qualifier": "",
+                                                                        "selectors": [],
+                                                                        "type_arguments": "None",
+                                                                        "arguments": [
+                                                                            {
+                                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "",
+                                                                                "selectors": [],
+                                                                                "member": "entry"
+                                                                            },
+                                                                            {
+                                                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                                                "prefix_operators": [],
+                                                                                "postfix_operators": [],
+                                                                                "qualifier": "",
+                                                                                "selectors": [],
+                                                                                "member": "files"
+                                                                            }
+                                                                        ],
+                                                                        "member": "addFilesToEntry"
+                                                                    }
+                                                                }
+                                                            ],
+                                                            "member": "ifPresent"
+                                                        }
+                                                    ],
+                                                    "type_arguments": "None",
+                                                    "arguments": [
+                                                        {
+                                                            "type": "<class 'javalang.tree.MemberReference'>",
+                                                            "prefix_operators": [],
+                                                            "postfix_operators": [],
+                                                            "qualifier": "",
+                                                            "selectors": [],
+                                                            "member": "file"
+                                                        }
+                                                    ],
+                                                    "member": "copyFileToFileDir"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entry"
+                                            }
+                                        ],
+                                        "member": "renameLinkedFilesToPattern"
+                                    }
+                                }
+                            ],
+                            "catches": [
+                                {
+                                    "type": "<class 'javalang.tree.CatchClause'>",
+                                    "label": "None",
+                                    "parameter": {
+                                        "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                        "modifiers": "None",
+                                        "annotations": "None",
+                                        "types": [
+                                            "Exception"
+                                        ],
+                                        "name": "e"
+                                    },
+                                    "block": [
+                                        {
+                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                            "label": "None",
+                                            "expression": {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "LOGGER",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "\"Could not block IndexingTaskManager\""
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "e"
+                                                    }
+                                                ],
+                                                "member": "error"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "finally_block": "None"
+                        },
+                        {
+                            "type": "<class 'javalang.tree.TryStatement'>",
+                            "label": "None",
+                            "resources": "None",
+                            "block": [
+                                {
+                                    "type": "<class 'javalang.tree.StatementExpression'>",
+                                    "label": "None",
+                                    "expression": {
+                                        "type": "<class 'javalang.tree.MethodInvocation'>",
+                                        "prefix_operators": [],
+                                        "postfix_operators": [],
+                                        "qualifier": "indexingTaskManager",
+                                        "selectors": [],
+                                        "type_arguments": "None",
+                                        "arguments": [
+                                            {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "PdfIndexer",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "bibDatabaseContext"
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "filePreferences"
+                                                    }
+                                                ],
+                                                "member": "of"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "entry"
+                                            },
+                                            {
+                                                "type": "<class 'javalang.tree.MemberReference'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "",
+                                                "selectors": [],
+                                                "member": "bibDatabaseContext"
+                                            }
+                                        ],
+                                        "member": "addToIndex"
+                                    }
+                                }
+                            ],
+                            "catches": [
+                                {
+                                    "type": "<class 'javalang.tree.CatchClause'>",
+                                    "label": "None",
+                                    "parameter": {
+                                        "type": "<class 'javalang.tree.CatchClauseParameter'>",
+                                        "modifiers": "None",
+                                        "annotations": "None",
+                                        "types": [
+                                            "IOException"
+                                        ],
+                                        "name": "e"
+                                    },
+                                    "block": [
+                                        {
+                                            "type": "<class 'javalang.tree.StatementExpression'>",
+                                            "label": "None",
+                                            "expression": {
+                                                "type": "<class 'javalang.tree.MethodInvocation'>",
+                                                "prefix_operators": [],
+                                                "postfix_operators": [],
+                                                "qualifier": "LOGGER",
+                                                "selectors": [],
+                                                "type_arguments": "None",
+                                                "arguments": [
+                                                    {
+                                                        "type": "<class 'javalang.tree.Literal'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "None",
+                                                        "selectors": [],
+                                                        "value": "\"Could not access Fulltext-Index\""
+                                                    },
+                                                    {
+                                                        "type": "<class 'javalang.tree.MemberReference'>",
+                                                        "prefix_operators": [],
+                                                        "postfix_operators": [],
+                                                        "qualifier": "",
+                                                        "selectors": [],
+                                                        "member": "e"
+                                                    }
+                                                ],
+                                                "member": "error"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ],
+                            "finally_block": "None"
+                        }
+                    ]
+                }
+            ],
+            "type_parameters": "None",
+            "extends": "None",
+            "implements": "None"
+        }
+    ]
+}

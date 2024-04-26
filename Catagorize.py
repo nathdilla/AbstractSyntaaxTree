@@ -1,41 +1,32 @@
 import json
-import os
-from openai import OpenAI
-from dotenv import load_dotenv # for loading environment variable
-
-load_dotenv()
-
-key = os.getenv('OPENAI_SECRET_KEY')
-# Initialize the OpenAI client with your API key
-client = OpenAI(api_key=key)
+from RequestAI import RequestAI
+from StringToJson import StringToJson
 
 # Load the prompt from a file
 with open('prompt.txt', 'r') as f:
     prompt = f.read()
 
-# Load the documentation strings from a JSON file
-with open('outputs/import_docs.json', 'r') as f:
-    import_docs = json.load(f)
+function_command = "There are descriptions for each function in the json. Return a new json that has the function name as the key. For each value, get the corresponding label based on the function description. Just give me the json. nothing else."
+class_command = "Given the description of each class, return a new json with the class name as the key. For each value, get the corresponding label based on the class description. Just give me the json. nothing else."
 
-command = "Given the description, output the corresponding label. Just give me the label, nothing else."
-
-# Iterate over each key and documentation string in the import_docs dictionary
-for key, doc_string in import_docs.items():
-    # Construct the request string with the current documentation string
-    request = prompt + doc_string + command
-    MODEL = "gpt-3.5-turbo"
+class Labeler:
+    def __init__(self, api_key):
+        self.api_key = api_key
     
-    # Perform the API request
-    response = client.chat.completions.create(
-        model=MODEL,
-        messages=[
-            {"role": "user", "content": request},
-        ],
-        temperature=0,
-    )
-
-    # Concatenate the key with the response content
-    result = f"{key}: {response.choices[0].message.content.strip()}"
-
-    # Print the combined result
-    print(result)
+    def getFunctionDomain(self, functionJson, outputPath):
+        # Load the documentation strings from a JSON file
+        with open(functionJson, 'r') as f:
+            data = json.load(f)
+        request = RequestAI(self.api_key)
+        result = request.getRequest(prompt + json.dumps(data) + function_command)
+        StringToJson.convert_to_json(result, outputPath)
+        return result
+    
+    def getClassDomain(self, classJson, outputPath):
+        # Load the documentation strings from a JSON file
+        with open(classJson, 'r') as f:
+            data = json.load(f)
+        request = RequestAI(self.api_key)
+        result = request.getRequest(prompt + json.dumps(data) + class_command)
+        StringToJson.convert_to_json(result, outputPath)
+        return result
